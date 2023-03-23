@@ -49,7 +49,7 @@ namespace OrionWinForms
             this.lblEstadoCivil = new System.Windows.Forms.Label();
             this.lblGenero = new System.Windows.Forms.Label();
             this.cbxGenero = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mskCPF = new System.Windows.Forms.MaskedTextBox();
             this.lblCPF = new System.Windows.Forms.Label();
             this.mskRG = new System.Windows.Forms.MaskedTextBox();
             this.lblRG = new System.Windows.Forms.Label();
@@ -65,13 +65,13 @@ namespace OrionWinForms
             this.txtNomePai = new System.Windows.Forms.TextBox();
             this.lblNomePai = new System.Windows.Forms.Label();
             this.gbDadosIgreja = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataBatismo = new System.Windows.Forms.DateTimePicker();
             this.lblDataDeBatismo = new System.Windows.Forms.Label();
             this.lblIgrejaDeBatismo = new System.Windows.Forms.Label();
             this.cbxIgrejaDeBatismo = new System.Windows.Forms.ComboBox();
             this.cbxFuncao = new System.Windows.Forms.ComboBox();
             this.lblFuncaonaIgreja = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataAdmissao = new System.Windows.Forms.DateTimePicker();
             this.ldlDataAdmissao = new System.Windows.Forms.Label();
             this.cbxOpcaoAdmissao = new System.Windows.Forms.ComboBox();
             this.lblAdmitidoPor = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@ namespace OrionWinForms
             this.lblComplemento = new System.Windows.Forms.Label();
             this.txtNumAddress = new System.Windows.Forms.TextBox();
             this.lblNumAddress = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.mskCEPAddress = new System.Windows.Forms.MaskedTextBox();
             this.lblCEP = new System.Windows.Forms.Label();
             this.txtPaisaddress = new System.Windows.Forms.TextBox();
             this.lblPais = new System.Windows.Forms.Label();
@@ -163,7 +163,7 @@ namespace OrionWinForms
             this.gbDadosPessoais.Controls.Add(this.lblEstadoCivil);
             this.gbDadosPessoais.Controls.Add(this.lblGenero);
             this.gbDadosPessoais.Controls.Add(this.cbxGenero);
-            this.gbDadosPessoais.Controls.Add(this.maskedTextBox1);
+            this.gbDadosPessoais.Controls.Add(this.mskCPF);
             this.gbDadosPessoais.Controls.Add(this.lblCPF);
             this.gbDadosPessoais.Controls.Add(this.mskRG);
             this.gbDadosPessoais.Controls.Add(this.lblRG);
@@ -193,7 +193,7 @@ namespace OrionWinForms
             // 
             this.dtpDataNascimento.Location = new System.Drawing.Point(823, 54);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(144, 27);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(202, 27);
             this.dtpDataNascimento.TabIndex = 9;
             // 
             // txtProfissao
@@ -312,13 +312,13 @@ namespace OrionWinForms
             this.cbxGenero.Size = new System.Drawing.Size(151, 28);
             this.cbxGenero.TabIndex = 23;
             // 
-            // maskedTextBox1
+            // mskCPF
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(183, 123);
-            this.maskedTextBox1.Mask = "000,000,000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(154, 27);
-            this.maskedTextBox1.TabIndex = 21;
+            this.mskCPF.Location = new System.Drawing.Point(183, 123);
+            this.mskCPF.Mask = "000,000,000-00";
+            this.mskCPF.Name = "mskCPF";
+            this.mskCPF.Size = new System.Drawing.Size(154, 27);
+            this.mskCPF.TabIndex = 21;
             // 
             // lblCPF
             // 
@@ -348,7 +348,7 @@ namespace OrionWinForms
             // 
             // txtNacionalidade
             // 
-            this.txtNacionalidade.Location = new System.Drawing.Point(1296, 55);
+            this.txtNacionalidade.Location = new System.Drawing.Point(1354, 55);
             this.txtNacionalidade.Name = "txtNacionalidade";
             this.txtNacionalidade.Size = new System.Drawing.Size(161, 27);
             this.txtNacionalidade.TabIndex = 15;
@@ -356,7 +356,7 @@ namespace OrionWinForms
             // lblNacionalidade
             // 
             this.lblNacionalidade.AutoSize = true;
-            this.lblNacionalidade.Location = new System.Drawing.Point(1296, 32);
+            this.lblNacionalidade.Location = new System.Drawing.Point(1354, 32);
             this.lblNacionalidade.Name = "lblNacionalidade";
             this.lblNacionalidade.Size = new System.Drawing.Size(106, 20);
             this.lblNacionalidade.TabIndex = 14;
@@ -365,35 +365,7 @@ namespace OrionWinForms
             // cbxUFNascimento
             // 
             this.cbxUFNascimento.FormattingEnabled = true;
-            this.cbxUFNascimento.Items.AddRange(new object[] {
-            "AC - Acre",
-            "AL - Alagoas",
-            "AP - Amapá",
-            "AM - Amazonas",
-            "BA - Bahia\t",
-            "CE - Ceará",
-            "DF - Distrito Federal",
-            "ES - Espírito Santo",
-            "GO - Goiás",
-            "MA - Maranhão",
-            "MT - Mato Grosso",
-            "MS - Mato Grosso do Sul",
-            "MG - Minas Gerais",
-            "PA - Pará",
-            "PB - Paraíba",
-            "PR - Paraná",
-            "PE - Pernambuco",
-            "PI - Piauí",
-            "RJ - Rio de Janeiro",
-            "RN - Rio Grande do Norte",
-            "RS - Rio Grande do Sul",
-            "RO - Rondônia",
-            "RR - Roraima",
-            "SC - Santa Catarina",
-            "SP - São Paulo",
-            "SE - Sergipe",
-            "TO - Tocantins"});
-            this.cbxUFNascimento.Location = new System.Drawing.Point(1139, 54);
+            this.cbxUFNascimento.Location = new System.Drawing.Point(1197, 54);
             this.cbxUFNascimento.Name = "cbxUFNascimento";
             this.cbxUFNascimento.Size = new System.Drawing.Size(151, 28);
             this.cbxUFNascimento.TabIndex = 13;
@@ -401,7 +373,7 @@ namespace OrionWinForms
             // lblEstadoNascimento
             // 
             this.lblEstadoNascimento.AutoSize = true;
-            this.lblEstadoNascimento.Location = new System.Drawing.Point(1139, 32);
+            this.lblEstadoNascimento.Location = new System.Drawing.Point(1197, 32);
             this.lblEstadoNascimento.Name = "lblEstadoNascimento";
             this.lblEstadoNascimento.Size = new System.Drawing.Size(109, 20);
             this.lblEstadoNascimento.TabIndex = 12;
@@ -409,7 +381,7 @@ namespace OrionWinForms
             // 
             // txtCidadeNascimento
             // 
-            this.txtCidadeNascimento.Location = new System.Drawing.Point(973, 55);
+            this.txtCidadeNascimento.Location = new System.Drawing.Point(1031, 54);
             this.txtCidadeNascimento.Name = "txtCidadeNascimento";
             this.txtCidadeNascimento.Size = new System.Drawing.Size(160, 27);
             this.txtCidadeNascimento.TabIndex = 11;
@@ -417,7 +389,7 @@ namespace OrionWinForms
             // lblCidadeNascimento
             // 
             this.lblCidadeNascimento.AutoSize = true;
-            this.lblCidadeNascimento.Location = new System.Drawing.Point(973, 32);
+            this.lblCidadeNascimento.Location = new System.Drawing.Point(1031, 31);
             this.lblCidadeNascimento.Name = "lblCidadeNascimento";
             this.lblCidadeNascimento.Size = new System.Drawing.Size(160, 20);
             this.lblCidadeNascimento.TabIndex = 10;
@@ -466,13 +438,13 @@ namespace OrionWinForms
             // 
             // gbDadosIgreja
             // 
-            this.gbDadosIgreja.Controls.Add(this.dateTimePicker3);
+            this.gbDadosIgreja.Controls.Add(this.dtpDataBatismo);
             this.gbDadosIgreja.Controls.Add(this.lblDataDeBatismo);
             this.gbDadosIgreja.Controls.Add(this.lblIgrejaDeBatismo);
             this.gbDadosIgreja.Controls.Add(this.cbxIgrejaDeBatismo);
             this.gbDadosIgreja.Controls.Add(this.cbxFuncao);
             this.gbDadosIgreja.Controls.Add(this.lblFuncaonaIgreja);
-            this.gbDadosIgreja.Controls.Add(this.dateTimePicker1);
+            this.gbDadosIgreja.Controls.Add(this.dtpDataAdmissao);
             this.gbDadosIgreja.Controls.Add(this.ldlDataAdmissao);
             this.gbDadosIgreja.Controls.Add(this.cbxOpcaoAdmissao);
             this.gbDadosIgreja.Controls.Add(this.lblAdmitidoPor);
@@ -491,12 +463,12 @@ namespace OrionWinForms
             this.gbDadosIgreja.TabStop = false;
             this.gbDadosIgreja.Text = "Dados da Igreja";
             // 
-            // dateTimePicker3
+            // dtpDataBatismo
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(210, 129);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(300, 27);
-            this.dateTimePicker3.TabIndex = 65;
+            this.dtpDataBatismo.Location = new System.Drawing.Point(210, 129);
+            this.dtpDataBatismo.Name = "dtpDataBatismo";
+            this.dtpDataBatismo.Size = new System.Drawing.Size(300, 27);
+            this.dtpDataBatismo.TabIndex = 65;
             // 
             // lblDataDeBatismo
             // 
@@ -541,12 +513,12 @@ namespace OrionWinForms
             this.lblFuncaonaIgreja.TabIndex = 60;
             this.lblFuncaonaIgreja.Text = "Função na Igreja";
             // 
-            // dateTimePicker1
+            // dtpDataAdmissao
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(856, 58);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(145, 27);
-            this.dateTimePicker1.TabIndex = 59;
+            this.dtpDataAdmissao.Location = new System.Drawing.Point(856, 58);
+            this.dtpDataAdmissao.Name = "dtpDataAdmissao";
+            this.dtpDataAdmissao.Size = new System.Drawing.Size(145, 27);
+            this.dtpDataAdmissao.TabIndex = 59;
             // 
             // ldlDataAdmissao
             // 
@@ -648,7 +620,7 @@ namespace OrionWinForms
             this.gbEndereco.Controls.Add(this.lblComplemento);
             this.gbEndereco.Controls.Add(this.txtNumAddress);
             this.gbEndereco.Controls.Add(this.lblNumAddress);
-            this.gbEndereco.Controls.Add(this.maskedTextBox2);
+            this.gbEndereco.Controls.Add(this.mskCEPAddress);
             this.gbEndereco.Controls.Add(this.lblCEP);
             this.gbEndereco.Controls.Add(this.txtPaisaddress);
             this.gbEndereco.Controls.Add(this.lblPais);
@@ -697,13 +669,13 @@ namespace OrionWinForms
             this.lblNumAddress.TabIndex = 36;
             this.lblNumAddress.Text = "Número";
             // 
-            // maskedTextBox2
+            // mskCEPAddress
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(1355, 58);
-            this.maskedTextBox2.Mask = "00000-000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(160, 27);
-            this.maskedTextBox2.TabIndex = 47;
+            this.mskCEPAddress.Location = new System.Drawing.Point(1355, 58);
+            this.mskCEPAddress.Mask = "00000-000";
+            this.mskCEPAddress.Name = "mskCEPAddress";
+            this.mskCEPAddress.Size = new System.Drawing.Size(160, 27);
+            this.mskCEPAddress.TabIndex = 47;
             // 
             // lblCEP
             // 
@@ -895,6 +867,7 @@ namespace OrionWinForms
             this.Controls.Add(this.gbEndereco);
             this.Controls.Add(this.gbDadosIgreja);
             this.Controls.Add(this.gbDadosPessoais);
+            this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Cadastro de Membros";
@@ -937,10 +910,10 @@ namespace OrionWinForms
         private System.Windows.Forms.Label lblEstadoCivil;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.ComboBox cbxGenero;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mskCPF;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.GroupBox gbDadosIgreja;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox mskCEPAddress;
         private System.Windows.Forms.GroupBox gbEndereco;
         private System.Windows.Forms.Label lblCEP;
         private System.Windows.Forms.TextBox txtPaisaddress;
@@ -968,13 +941,13 @@ namespace OrionWinForms
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.MaskedTextBox mskCellFone;
         private System.Windows.Forms.Label lblTelefone;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtpDataBatismo;
         private System.Windows.Forms.Label lblDataDeBatismo;
         private System.Windows.Forms.Label lblIgrejaDeBatismo;
         private System.Windows.Forms.ComboBox cbxIgrejaDeBatismo;
         private System.Windows.Forms.ComboBox cbxFuncao;
         private System.Windows.Forms.Label lblFuncaonaIgreja;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDataAdmissao;
         private System.Windows.Forms.Label ldlDataAdmissao;
         private System.Windows.Forms.ComboBox cbxOpcaoAdmissao;
         private System.Windows.Forms.Label lblAdmitidoPor;

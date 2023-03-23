@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 namespace OrionWinForms
@@ -13,7 +14,10 @@ namespace OrionWinForms
         }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            dtpDataNascimento.Value = DateTime.Now.Date;
+            dtpDataAdmissao.Value = DateTime.Now.Date;
+            dtpDataBatismo.Value = DateTime.Now.Date;
+            
             CarregarUFNascimento();
             CarregarUFAddress();
             CarregarGenero();
@@ -378,11 +382,6 @@ namespace OrionWinForms
             {
                 GerenciarDiretorios();
 
-
-                SalvarImagem();
-                //msg = "Salvando imagem de perfil do usuário...";
-                //MessageBox.Show(msg);
-
                 GerarArquivoPdf();
                 //msg = "Gerando arquivo em formato PDF...";
                 //MessageBox.Show(msg);
@@ -429,16 +428,213 @@ namespace OrionWinForms
                 return false;
             }
 
-            else if (dtpDataNascimento.Text == "")
+            else if (this.dtpDataNascimento.Value == DateTime.Now.Date)
             {
                 MessageBox.Show("Informe a Data de Nascimento do Membro");
                 dtpDataNascimento.Focus();
                 return false;
             }
+
+            else if (txtCidadeNascimento.Text == "")
+            {
+                MessageBox.Show("Informe a Cidade de Nascimento do Membro");
+                txtCidadeNascimento.Focus();
+                return false;
+            }
+
+            else if (txtNacionalidade.Text == "")
+            {
+                MessageBox.Show("Informe a Nacionalidade do Membro");
+                txtNacionalidade.Focus();
+                return false;
+            }
+
+            else if (txtIdade.Text == "")
+            {
+                MessageBox.Show("Informe a Idade do Membro");
+                txtIdade.Focus();
+                return false;
+            }
+
+            else if (mskRG.Text == "" || mskRG.Text== "00,000,000-0" ||mskRG.Text== "  .   .   -")
+            {
+                MessageBox.Show("Informe o número do RG do Membro");
+                mskRG.Focus();
+                return false;
+            }
+
+            else if (mskCPF.Text =="" || mskCPF.Text== "000,000,000-00" || mskCPF.Text== "   .   .   -")
+            {
+                MessageBox.Show("Informe o número do CPF do Membro");
+                mskCPF.Focus();
+                return false;
+            }
+
+            else if (cbxGenero.Text == "")
+            {
+                MessageBox.Show("Escolha o Gênero do Membro");
+                cbxGenero.Focus();
+                return false;
+            }
+
+            else if (cbxEstadoCivil.Text == "")
+            {
+                MessageBox.Show("Escolha o Estado Civil do Membro");
+                cbxEstadoCivil.Focus();
+                return false;
+            }
+            
+            else if (mskCellFone.Text == "" || mskCellFone.Text== "(99) 00000-0000" || mskCellFone.Text== "(  )      -")
+            {
+                MessageBox.Show("Informe o número de Telefone do Membro");
+                mskCellFone.Focus();
+                return false;
+            }
+
+            else if (mskEmail.Text == "" )
+            {
+                MessageBox.Show("Informe o Email do Membro");
+                mskEmail.Focus();
+                return false;
+            }
+
+            else if (cbxEscolaridade.Text == "")
+            {
+                MessageBox.Show("Escolha a Escolaridade do Membro");
+                cbxEscolaridade.Focus();
+                return false;
+            }
+
+            else if (txtProfissao.Text == "")
+            {
+                MessageBox.Show("Informe a profissão do Membro");
+                txtProfissao.Focus();
+                return false;
+            }
+
+            else if (txtLogradouro.Text == "")
+            {
+                MessageBox.Show("Informe o Endereço do Membro");
+                txtLogradouro.Focus();
+                return false;
+            }
+
+            else if (txtNumAddress.Text == "")
+            {
+                MessageBox.Show("Informe o Número de Residência do Membro");
+                txtNumAddress.Focus();
+                return false;
+            }
+
+            else if (txtComplementoAddress.Text == "")
+            {
+                MessageBox.Show("Informe o Complemento da Residência do Membro");
+                txtComplementoAddress.Focus();
+                return false;
+            }
+
+            else if (txtCidadeAddress.Text == "")
+            {
+                MessageBox.Show("Informe a Cidade da Residência do Membro");
+                txtCidadeAddress.Focus();
+                return false;
+            }
+            
+            else if (cbxUFAddress.Text == "")
+            {
+                MessageBox.Show("Informe o Estado da Residência do Membro");
+                cbxUFAddress.Focus();
+                return false;
+            }
+            
+            else if (txtPaisaddress.Text == "")
+            {
+                MessageBox.Show("Informe o País da Residência do Membro");
+                txtPaisaddress.Focus();
+                return false;
+            }
+
+            else if (mskCEPAddress.Text == "" || mskCEPAddress.Text == "00000-000" || mskCEPAddress.Text== "     -")
+            {
+                MessageBox.Show("Informe o CEP da Residência do Membro");
+                mskCEPAddress.Focus();
+                return false;
+            }
+
+            else if (cbxSetorAtual.Text == "")
+            {
+                MessageBox.Show("Informe o Setor Atual do Membro");
+                cbxSetorAtual.Focus();
+                return false;
+            }
+
+            else if (cbxSetorAnterior.Text == "")
+            {
+                MessageBox.Show("Informe o Setor Anterior do Membro");
+                cbxSetorAnterior.Focus();
+                return false;
+            }
+
+            else if (cbxCongregacaoAtual.Text == "")
+            {
+                MessageBox.Show("Informe a Congregação Atual do Membro");
+                cbxCongregacaoAtual.Focus();
+                return false;
+            }
+
+            else if (cbxCongregacaoAnterior.Text == "")
+            {
+                MessageBox.Show("Informe a Congregação Anterior do Membro");
+                cbxCongregacaoAnterior.Focus();
+                return false;
+            }
+
+            else if (cbxOpcaoAdmissao.Text == "")
+            {
+                MessageBox.Show("Informe o opção de Admissão do Membro");
+                cbxOpcaoAdmissao.Focus();
+                return false;
+            }
+
+            else if (this.dtpDataAdmissao.Value == DateTime.Now.Date)
+            {
+                MessageBox.Show("Informe a Data de Admissão do Membro");
+                dtpDataAdmissao.Focus();
+                return false;
+            }
+
+            else if (this.dtpDataBatismo.Value == DateTime.Now.Date)
+            {
+                MessageBox.Show("Informe a Data de Batismo do Membro");
+                dtpDataBatismo.Focus();
+                return false;
+            }
+
+            else if (cbxFuncao.Text == "")
+            {
+                MessageBox.Show("Informe a Função Atual do Membro");
+                cbxFuncao.Focus();
+                return false;
+            }
+
+            else if (cbxIgrejaDeBatismo.Text == "")
+            {
+                MessageBox.Show("Informe a Congregação de Batismo do Membro");
+                cbxIgrejaDeBatismo.Focus();
+                return false;
+            }
+
             return true;
         }
-        private void GerenciarDiretorios() { }
-        private void SalvarImagem() { }
+        private void GerenciarDiretorios() 
+        {
+            var nome = txtNome.Text;
+            var sobrenome = txtSobrenome.Text;
+            var nomecompleto = nome + sobrenome;
+            //Criar diretorio 
+            Directory.CreateDirectory(@"c:\AppOrion\Dados\Membros\" + nomecompleto);
+            MessageBox.Show("Pasta criada com sucesso!");
+        }
         private void GerarArquivoPdf() { }
         private void GerarArquivoCSV() { }
         private void GerarArquivoJSON() { }
