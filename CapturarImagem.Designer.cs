@@ -131,11 +131,11 @@ namespace OrionWinForms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(231, 526);
+            this.label1.Location = new System.Drawing.Point(297, 526);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 20);
+            this.label1.Size = new System.Drawing.Size(251, 20);
             this.label1.TabIndex = 9;
-            this.label1.Text = "* nome da imagem deve ser o nome do membro";
+            this.label1.Text = "* nome da image = nome do membro";
             // 
             // CapturarImagem
             // 

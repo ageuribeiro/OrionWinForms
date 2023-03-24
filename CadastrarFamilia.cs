@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace OrionWinForms
 {
-    public partial class CadastrarSetor : Form
+    public partial class CadastrarFamilia : Form
     {
-        public CadastrarSetor()
+        public CadastrarFamilia()
         {
             InitializeComponent();
         }
-
     }
 }

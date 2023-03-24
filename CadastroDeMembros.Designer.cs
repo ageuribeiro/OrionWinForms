@@ -65,6 +65,10 @@ namespace OrionWinForms
             this.txtNomePai = new System.Windows.Forms.TextBox();
             this.lblNomePai = new System.Windows.Forms.Label();
             this.gbDadosIgreja = new System.Windows.Forms.GroupBox();
+            this.cbxFamily = new System.Windows.Forms.ComboBox();
+            this.lblFamily = new System.Windows.Forms.Label();
+            this.cbxStatus = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.dtpDataBatismo = new System.Windows.Forms.DateTimePicker();
             this.lblDataDeBatismo = new System.Windows.Forms.Label();
             this.lblIgrejaDeBatismo = new System.Windows.Forms.Label();
@@ -99,19 +103,22 @@ namespace OrionWinForms
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.lblLogradouro = new System.Windows.Forms.Label();
             this.IsBatizado = new System.Windows.Forms.CheckBox();
-            this.ckbMembroCartao = new System.Windows.Forms.CheckBox();
+            this.isMemberCard = new System.Windows.Forms.CheckBox();
             this.gpDadosimportantes = new System.Windows.Forms.GroupBox();
-            this.ISBatizedWithSpirit = new System.Windows.Forms.CheckBox();
+            this.IsBatizedWithSpirit = new System.Windows.Forms.CheckBox();
             this.btnCaptureImagem = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnPesquisarMembro = new System.Windows.Forms.Button();
             this.btnGerarFamilia = new System.Windows.Forms.Button();
             this.btnCadastrarSetor = new System.Windows.Forms.Button();
             this.btnCadastrarIgreja = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbDadosPessoais.SuspendLayout();
             this.gbDadosIgreja.SuspendLayout();
             this.gbEndereco.SuspendLayout();
             this.gpDadosimportantes.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNome
@@ -148,6 +155,8 @@ namespace OrionWinForms
             // 
             // gbDadosPessoais
             // 
+            this.gbDadosPessoais.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDadosPessoais.Controls.Add(this.dtpDataNascimento);
             this.gbDadosPessoais.Controls.Add(this.txtProfissao);
             this.gbDadosPessoais.Controls.Add(this.lblProfissao);
@@ -182,9 +191,9 @@ namespace OrionWinForms
             this.gbDadosPessoais.Controls.Add(this.txtSobrenome);
             this.gbDadosPessoais.Controls.Add(this.lblSobrenome);
             this.gbDadosPessoais.Controls.Add(this.lblNome);
-            this.gbDadosPessoais.Location = new System.Drawing.Point(12, 12);
+            this.gbDadosPessoais.Location = new System.Drawing.Point(23, 12);
             this.gbDadosPessoais.Name = "gbDadosPessoais";
-            this.gbDadosPessoais.Size = new System.Drawing.Size(1521, 175);
+            this.gbDadosPessoais.Size = new System.Drawing.Size(1510, 175);
             this.gbDadosPessoais.TabIndex = 4;
             this.gbDadosPessoais.TabStop = false;
             this.gbDadosPessoais.Text = "Dados Pessoais";
@@ -200,7 +209,7 @@ namespace OrionWinForms
             // 
             this.txtProfissao.Location = new System.Drawing.Point(1296, 124);
             this.txtProfissao.Name = "txtProfissao";
-            this.txtProfissao.Size = new System.Drawing.Size(213, 27);
+            this.txtProfissao.Size = new System.Drawing.Size(208, 27);
             this.txtProfissao.TabIndex = 33;
             // 
             // lblProfissao
@@ -350,7 +359,7 @@ namespace OrionWinForms
             // 
             this.txtNacionalidade.Location = new System.Drawing.Point(1354, 55);
             this.txtNacionalidade.Name = "txtNacionalidade";
-            this.txtNacionalidade.Size = new System.Drawing.Size(161, 27);
+            this.txtNacionalidade.Size = new System.Drawing.Size(150, 27);
             this.txtNacionalidade.TabIndex = 15;
             // 
             // lblNacionalidade
@@ -438,6 +447,10 @@ namespace OrionWinForms
             // 
             // gbDadosIgreja
             // 
+            this.gbDadosIgreja.Controls.Add(this.cbxFamily);
+            this.gbDadosIgreja.Controls.Add(this.lblFamily);
+            this.gbDadosIgreja.Controls.Add(this.cbxStatus);
+            this.gbDadosIgreja.Controls.Add(this.lblStatus);
             this.gbDadosIgreja.Controls.Add(this.dtpDataBatismo);
             this.gbDadosIgreja.Controls.Add(this.lblDataDeBatismo);
             this.gbDadosIgreja.Controls.Add(this.lblIgrejaDeBatismo);
@@ -462,6 +475,40 @@ namespace OrionWinForms
             this.gbDadosIgreja.TabIndex = 5;
             this.gbDadosIgreja.TabStop = false;
             this.gbDadosIgreja.Text = "Dados da Igreja";
+            // 
+            // cbxFamily
+            // 
+            this.cbxFamily.FormattingEnabled = true;
+            this.cbxFamily.Location = new System.Drawing.Point(674, 128);
+            this.cbxFamily.Name = "cbxFamily";
+            this.cbxFamily.Size = new System.Drawing.Size(176, 28);
+            this.cbxFamily.TabIndex = 70;
+            // 
+            // lblFamily
+            // 
+            this.lblFamily.AutoSize = true;
+            this.lblFamily.Location = new System.Drawing.Point(675, 105);
+            this.lblFamily.Name = "lblFamily";
+            this.lblFamily.Size = new System.Drawing.Size(56, 20);
+            this.lblFamily.TabIndex = 68;
+            this.lblFamily.Text = "Familia";
+            // 
+            // cbxStatus
+            // 
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Location = new System.Drawing.Point(517, 128);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(151, 28);
+            this.cbxStatus.TabIndex = 67;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(517, 105);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(49, 20);
+            this.lblStatus.TabIndex = 66;
+            this.lblStatus.Text = "Status";
             // 
             // dtpDataBatismo
             // 
@@ -761,20 +808,20 @@ namespace OrionWinForms
             this.IsBatizado.Text = "Membro Batizado nas Águas";
             this.IsBatizado.UseVisualStyleBackColor = true;
             // 
-            // ckbMembroCartao
+            // isMemberCard
             // 
-            this.ckbMembroCartao.AutoSize = true;
-            this.ckbMembroCartao.Location = new System.Drawing.Point(9, 85);
-            this.ckbMembroCartao.Name = "ckbMembroCartao";
-            this.ckbMembroCartao.Size = new System.Drawing.Size(189, 24);
-            this.ckbMembroCartao.TabIndex = 67;
-            this.ckbMembroCartao.Text = "Tem Cartão de Membro";
-            this.ckbMembroCartao.UseVisualStyleBackColor = true;
+            this.isMemberCard.AutoSize = true;
+            this.isMemberCard.Location = new System.Drawing.Point(9, 85);
+            this.isMemberCard.Name = "isMemberCard";
+            this.isMemberCard.Size = new System.Drawing.Size(189, 24);
+            this.isMemberCard.TabIndex = 67;
+            this.isMemberCard.Text = "Tem Cartão de Membro";
+            this.isMemberCard.UseVisualStyleBackColor = true;
             // 
             // gpDadosimportantes
             // 
-            this.gpDadosimportantes.Controls.Add(this.ISBatizedWithSpirit);
-            this.gpDadosimportantes.Controls.Add(this.ckbMembroCartao);
+            this.gpDadosimportantes.Controls.Add(this.IsBatizedWithSpirit);
+            this.gpDadosimportantes.Controls.Add(this.isMemberCard);
             this.gpDadosimportantes.Controls.Add(this.IsBatizado);
             this.gpDadosimportantes.Location = new System.Drawing.Point(1183, 318);
             this.gpDadosimportantes.Name = "gpDadosimportantes";
@@ -783,15 +830,15 @@ namespace OrionWinForms
             this.gpDadosimportantes.TabStop = false;
             this.gpDadosimportantes.Text = "Informações Importantes";
             // 
-            // ISBatizedWithSpirit
+            // IsBatizedWithSpirit
             // 
-            this.ISBatizedWithSpirit.AutoSize = true;
-            this.ISBatizedWithSpirit.Location = new System.Drawing.Point(9, 115);
-            this.ISBatizedWithSpirit.Name = "ISBatizedWithSpirit";
-            this.ISBatizedWithSpirit.Size = new System.Drawing.Size(280, 24);
-            this.ISBatizedWithSpirit.TabIndex = 68;
-            this.ISBatizedWithSpirit.Text = "Membro Batizado com Espírito Santo";
-            this.ISBatizedWithSpirit.UseVisualStyleBackColor = true;
+            this.IsBatizedWithSpirit.AutoSize = true;
+            this.IsBatizedWithSpirit.Location = new System.Drawing.Point(9, 115);
+            this.IsBatizedWithSpirit.Name = "IsBatizedWithSpirit";
+            this.IsBatizedWithSpirit.Size = new System.Drawing.Size(280, 24);
+            this.IsBatizedWithSpirit.TabIndex = 68;
+            this.IsBatizedWithSpirit.Text = "Membro Batizado com Espírito Santo";
+            this.IsBatizedWithSpirit.UseVisualStyleBackColor = true;
             // 
             // btnCaptureImagem
             // 
@@ -829,8 +876,9 @@ namespace OrionWinForms
             this.btnGerarFamilia.Name = "btnGerarFamilia";
             this.btnGerarFamilia.Size = new System.Drawing.Size(160, 45);
             this.btnGerarFamilia.TabIndex = 72;
-            this.btnGerarFamilia.Text = "Gerar Família";
+            this.btnGerarFamilia.Text = "Cadastrar Família";
             this.btnGerarFamilia.UseVisualStyleBackColor = true;
+            this.btnGerarFamilia.Click += new System.EventHandler(this.btnGerarFamilia_Click);
             // 
             // btnCadastrarSetor
             // 
@@ -852,11 +900,28 @@ namespace OrionWinForms
             this.btnCadastrarIgreja.UseVisualStyleBackColor = true;
             this.btnCadastrarIgreja.Click += new System.EventHandler(this.btnCadastrarIgreja_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 595);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1558, 26);
+            this.statusStrip1.TabIndex = 75;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1546, 617);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1558, 621);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCadastrarIgreja);
             this.Controls.Add(this.btnCadastrarSetor);
             this.Controls.Add(this.btnGerarFamilia);
@@ -880,7 +945,10 @@ namespace OrionWinForms
             this.gbEndereco.PerformLayout();
             this.gpDadosimportantes.ResumeLayout(false);
             this.gpDadosimportantes.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -955,9 +1023,9 @@ namespace OrionWinForms
         private System.Windows.Forms.Label lblCongregaçãoAnterior;
         private System.Windows.Forms.Label lblCongregacaoAtual;
         private System.Windows.Forms.CheckBox IsBatizado;
-        private System.Windows.Forms.CheckBox ckbMembroCartao;
+        private System.Windows.Forms.CheckBox isMemberCard;
         private System.Windows.Forms.GroupBox gpDadosimportantes;
-        private System.Windows.Forms.CheckBox ISBatizedWithSpirit;
+        private System.Windows.Forms.CheckBox IsBatizedWithSpirit;
         private System.Windows.Forms.Button btnCaptureImagem;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnPesquisarMembro;
@@ -965,6 +1033,12 @@ namespace OrionWinForms
         private System.Windows.Forms.Button btnCadastrarSetor;
         private System.Windows.Forms.Button btnCadastrarIgreja;
         private System.Windows.Forms.ComboBox cbxCongregacaoAtual;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ComboBox cbxStatus;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cbxFamily;
+        private System.Windows.Forms.Label lblFamily;
     }
 }
 

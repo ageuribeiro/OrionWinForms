@@ -63,7 +63,12 @@ namespace OrionWinForms
                 //Limpa a area de tranferencia
                 Clipboard.Clear();
                 var nomeDoMembro = txtNomeDaImagem.Text;
-                pictureBoxImageCamCaptured.Image.Save(@"c:\AppOrion\Dados\Membros\" + nomeDoMembro + "\".Jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                var path = @"c:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\"+nomeDoMembro+".jpg";
+                using (Bitmap bmb = (Bitmap)pictureBoxImageCam.Image.Clone())
+                {
+                    bmb.Save(path, bmb.RawFormat);
+                }
+                   
 
                 MessageBox.Show("Captura executada com sucesso!");
             }
