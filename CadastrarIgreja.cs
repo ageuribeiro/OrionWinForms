@@ -15,6 +15,9 @@ namespace OrionWinForms
         public CadastrarIgreja()
         {
             InitializeComponent();
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
     }
 }

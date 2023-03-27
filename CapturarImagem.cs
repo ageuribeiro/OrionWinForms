@@ -23,6 +23,9 @@ namespace OrionWinForms
         public CapturarImagem()
         {
             InitializeComponent();
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
             //Busca todas as cameras que estão conectadas ao computador
             _filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);

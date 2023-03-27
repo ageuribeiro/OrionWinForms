@@ -97,6 +97,7 @@ namespace OrionWinForms
             this.btnGerarFamilia.TabIndex = 6;
             this.btnGerarFamilia.Text = "Gerar Família";
             this.btnGerarFamilia.UseVisualStyleBackColor = true;
+            this.btnGerarFamilia.Click += new System.EventHandler(this.btnGerarFamilia_Click);
             // 
             // listView1
             // 

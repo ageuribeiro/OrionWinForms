@@ -16,6 +16,9 @@ namespace OrionWinForms
         public SplashScreen()
         {
             InitializeComponent();
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void SplashScreen_Load(object sender, EventArgs e)
@@ -38,7 +41,7 @@ namespace OrionWinForms
                 timer1.Stop();
                 MessageBox.Show("Welcome Orion System!","Welcome",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Hide();
-                frmPrincipal frm = new frmPrincipal();
+                FrmPrincipal frm = new FrmPrincipal();
                 frm.Show();
                 
             }

@@ -80,7 +80,7 @@ namespace OrionWinForms
             // lblCidadeSetor
             // 
             this.lblCidadeSetor.AutoSize = true;
-            this.lblCidadeSetor.Location = new System.Drawing.Point(13, 75);
+            this.lblCidadeSetor.Location = new System.Drawing.Point(617, 9);
             this.lblCidadeSetor.Name = "lblCidadeSetor";
             this.lblCidadeSetor.Size = new System.Drawing.Size(56, 20);
             this.lblCidadeSetor.TabIndex = 3;
@@ -89,7 +89,7 @@ namespace OrionWinForms
             // lblEstadodoSetor
             // 
             this.lblEstadodoSetor.AutoSize = true;
-            this.lblEstadodoSetor.Location = new System.Drawing.Point(197, 75);
+            this.lblEstadodoSetor.Location = new System.Drawing.Point(801, 9);
             this.lblEstadodoSetor.Name = "lblEstadodoSetor";
             this.lblEstadodoSetor.Size = new System.Drawing.Size(26, 20);
             this.lblEstadodoSetor.TabIndex = 4;
@@ -98,7 +98,7 @@ namespace OrionWinForms
             // lblPaisSetor
             // 
             this.lblPaisSetor.AutoSize = true;
-            this.lblPaisSetor.Location = new System.Drawing.Point(243, 75);
+            this.lblPaisSetor.Location = new System.Drawing.Point(847, 9);
             this.lblPaisSetor.Name = "lblPaisSetor";
             this.lblPaisSetor.Size = new System.Drawing.Size(34, 20);
             this.lblPaisSetor.TabIndex = 5;
@@ -107,7 +107,7 @@ namespace OrionWinForms
             // CEPSetor
             // 
             this.CEPSetor.AutoSize = true;
-            this.CEPSetor.Location = new System.Drawing.Point(432, 75);
+            this.CEPSetor.Location = new System.Drawing.Point(1036, 9);
             this.CEPSetor.Name = "CEPSetor";
             this.CEPSetor.Size = new System.Drawing.Size(34, 20);
             this.CEPSetor.TabIndex = 6;
@@ -116,7 +116,7 @@ namespace OrionWinForms
             // lblPastorSetor
             // 
             this.lblPastorSetor.AutoSize = true;
-            this.lblPastorSetor.Location = new System.Drawing.Point(562, 75);
+            this.lblPastorSetor.Location = new System.Drawing.Point(1167, 9);
             this.lblPastorSetor.Name = "lblPastorSetor";
             this.lblPastorSetor.Size = new System.Drawing.Size(49, 20);
             this.lblPastorSetor.TabIndex = 7;
@@ -127,81 +127,85 @@ namespace OrionWinForms
             this.txtNumeroSetor.Location = new System.Drawing.Point(13, 32);
             this.txtNumeroSetor.Name = "txtNumeroSetor";
             this.txtNumeroSetor.Size = new System.Drawing.Size(58, 27);
-            this.txtNumeroSetor.TabIndex = 9;
+            this.txtNumeroSetor.TabIndex = 0;
             // 
             // txtNomeSetor
             // 
             this.txtNomeSetor.Location = new System.Drawing.Point(81, 32);
             this.txtNomeSetor.Name = "txtNomeSetor";
             this.txtNomeSetor.Size = new System.Drawing.Size(196, 27);
-            this.txtNomeSetor.TabIndex = 10;
+            this.txtNomeSetor.TabIndex = 1;
             // 
             // txtEnderecoSetor
             // 
             this.txtEnderecoSetor.Location = new System.Drawing.Point(283, 32);
             this.txtEnderecoSetor.Name = "txtEnderecoSetor";
-            this.txtEnderecoSetor.Size = new System.Drawing.Size(505, 27);
-            this.txtEnderecoSetor.TabIndex = 11;
+            this.txtEnderecoSetor.Size = new System.Drawing.Size(328, 27);
+            this.txtEnderecoSetor.TabIndex = 2;
             // 
             // txtCidadeSetor
             // 
-            this.txtCidadeSetor.Location = new System.Drawing.Point(13, 98);
+            this.txtCidadeSetor.Location = new System.Drawing.Point(617, 32);
             this.txtCidadeSetor.Name = "txtCidadeSetor";
             this.txtCidadeSetor.Size = new System.Drawing.Size(178, 27);
-            this.txtCidadeSetor.TabIndex = 12;
+            this.txtCidadeSetor.TabIndex = 3;
             // 
             // txtUFSetor
             // 
-            this.txtUFSetor.Location = new System.Drawing.Point(197, 98);
+            this.txtUFSetor.Location = new System.Drawing.Point(801, 32);
             this.txtUFSetor.Name = "txtUFSetor";
             this.txtUFSetor.Size = new System.Drawing.Size(36, 27);
-            this.txtUFSetor.TabIndex = 13;
+            this.txtUFSetor.TabIndex = 4;
             // 
             // txtPaisSetor
             // 
-            this.txtPaisSetor.Location = new System.Drawing.Point(239, 98);
+            this.txtPaisSetor.Location = new System.Drawing.Point(843, 32);
             this.txtPaisSetor.Name = "txtPaisSetor";
             this.txtPaisSetor.Size = new System.Drawing.Size(187, 27);
-            this.txtPaisSetor.TabIndex = 14;
+            this.txtPaisSetor.TabIndex = 5;
             // 
             // txtCepSetor
             // 
-            this.txtCepSetor.Location = new System.Drawing.Point(432, 98);
+            this.txtCepSetor.Location = new System.Drawing.Point(1036, 32);
             this.txtCepSetor.Name = "txtCepSetor";
             this.txtCepSetor.Size = new System.Drawing.Size(125, 27);
-            this.txtCepSetor.TabIndex = 15;
+            this.txtCepSetor.TabIndex = 6;
             // 
             // txtPastorSetor
             // 
-            this.txtPastorSetor.Location = new System.Drawing.Point(562, 98);
+            this.txtPastorSetor.Location = new System.Drawing.Point(1167, 32);
             this.txtPastorSetor.Name = "txtPastorSetor";
-            this.txtPastorSetor.Size = new System.Drawing.Size(226, 27);
-            this.txtPastorSetor.TabIndex = 16;
+            this.txtPastorSetor.Size = new System.Drawing.Size(164, 27);
+            this.txtPastorSetor.TabIndex = 7;
             // 
             // btnCadastratSetor
             // 
-            this.btnCadastratSetor.Location = new System.Drawing.Point(675, 131);
+            this.btnCadastratSetor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCadastratSetor.Location = new System.Drawing.Point(1347, 12);
             this.btnCadastratSetor.Name = "btnCadastratSetor";
-            this.btnCadastratSetor.Size = new System.Drawing.Size(113, 42);
+            this.btnCadastratSetor.Size = new System.Drawing.Size(132, 47);
             this.btnCadastratSetor.TabIndex = 17;
             this.btnCadastratSetor.Text = "Cadastrar";
             this.btnCadastratSetor.UseVisualStyleBackColor = true;
+            this.btnCadastratSetor.Click += new System.EventHandler(this.btnCadastratSetor_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 186);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(785, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(1467, 361);
             this.dataGridView1.TabIndex = 18;
             // 
             // CadastrarSetor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1491, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCadastratSetor);
             this.Controls.Add(this.txtPastorSetor);
@@ -222,6 +226,7 @@ namespace OrionWinForms
             this.Controls.Add(this.lblNumeroSetor);
             this.Name = "CadastrarSetor";
             this.Text = "Cadastrar Setor";
+            this.Load += new System.EventHandler(this.CadastrarSetor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

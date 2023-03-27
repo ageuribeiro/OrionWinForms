@@ -6,15 +6,18 @@ using System.Windows.Forms;
 
 namespace OrionWinForms
 {
-    public partial class frmPrincipal : Form
+    public partial class FrmPrincipal : Form
     {
-        public frmPrincipal()
+        public FrmPrincipal()
         {
             InitializeComponent();
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "Carregando os dados...";
+           
 
             dtpDataNascimento.Value = DateTime.Now.Date;
             dtpDataAdmissao.Value = DateTime.Now.Date;
@@ -36,15 +39,14 @@ namespace OrionWinForms
         }
         private void CarregarUFNascimento()
         {
-            toolStripStatusLabel1.Text = "Conectando no Banco de Dados...";
-            //Define a variável de conexão com o banco de dados            
+        
             using (SqlConnection conexao = new SqlConnection(@"Data Source=ASUSX512FJC\SQLSERVER;Initial Catalog=AppConnectedChurchDatabase;Integrated Security=True"))
             {
-                toolStripStatusLabel1.Text = "Executando Query...";
+
                 //Define o comando
                 SqlCommand command = new SqlCommand(@"SELECT Id, Sigla, Nome FROM UF ORDER BY Sigla", conexao);
 
-                toolStripStatusLabel1.Text = "Abrindo conexão com o Banco de Dados...";
+
                 //Abre conexao
                 conexao.Open();
 
@@ -438,7 +440,6 @@ namespace OrionWinForms
             }
         }
 
-
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
 
@@ -458,6 +459,9 @@ namespace OrionWinForms
                 GerarArquivoJSON();
                 //msg = "Gerando arquivo em fomrato JSON...";
                 //MessageBox.Show(msg);
+
+                ResetarCampos();
+
             }
         }
         private bool ValidarDados()
@@ -468,6 +472,7 @@ namespace OrionWinForms
                 txtNome.Focus();
                 return false;
             }
+
             else if (txtSobrenome.Text == "")
             {
                 MessageBox.Show("Informe o Sobrenome do Membro");
@@ -594,6 +599,13 @@ namespace OrionWinForms
                 return false;
             }
 
+            else if(txtNeighborhood.Text == "")
+            {
+                MessageBox.Show("Informe o Bairro Residencial do Membro");
+                txtNeighborhood.Focus();
+                return false;
+            }
+
             else if (txtCidadeAddress.Text == "")
             {
                 MessageBox.Show("Informe a Cidade da Residência do Membro");
@@ -692,6 +704,13 @@ namespace OrionWinForms
                 return false;
             }
 
+            else if(cbxStatus.Text == "")
+            {
+                MessageBox.Show("Informe o Status atual do Membro");
+                cbxStatus.Focus();
+                return false;
+            }
+
             return true;
         }
         private void GerenciarDiretorios()
@@ -701,60 +720,6 @@ namespace OrionWinForms
             Directory.CreateDirectory(@"c:\AppOrion\Dados\Membros\" + nome);
             MessageBox.Show("Pasta criada com sucesso!");
         }
-
-        private void GetFormData()
-        {
-            ValidarDados();
-
-
-            try
-            {
-                var nome = txtNome.Text;
-                var sobrenome = txtSobrenome.Text;
-                var nomeDoPai = txtNomePai.Text;
-                var nomeDaMae = txtNomeMae.Text;
-                var dtNasc = dtpDataNascimento.Value;
-                var cityNasc = txtCidadeNascimento.Text;
-                var ufNasc = cbxUFNascimento.Text;
-                var nacionalidade = txtNacionalidade.Text;
-                var age = txtIdade.Text;
-                var rg = mskRG.Text;
-                var cPF = mskCPF.Text;
-                var genero = cbxGenero.Text;
-                var estCivil = cbxEstadoCivil.Text;
-                var cel = mskCellFone.Text;
-                var mail = mskEmail.Text;
-                var escolar = cbxEscolaridade.Text;
-                var profissao = txtProfissao.Text;
-                var logr = txtLogradouro.Text;
-                var num = txtNumAddress.Text;
-                var compl = txtComplementoAddress.Text;
-                var city = txtCidadeAddress.Text;
-                var uf = cbxUFAddress.Text;
-                var country = txtPaisaddress.Text;
-                var Cep = mskCEPAddress.Text;
-                var setorAtual = cbxSetorAtual.Text;
-                var setorAnterior = cbxSetorAnterior.Text;
-                var congrAtual = cbxCongregacaoAtual.Text;
-                var congrAnterior = cbxCongregacaoAnterior.Text;
-                var admitidoPor = cbxOpcaoAdmissao.Text;
-                var dtAdmissao = dtpDataAdmissao.Value;
-                var function = cbxFuncao.Text;
-                var congrBatismo = cbxIgrejaDeBatismo.Text;
-                var dtBatismo = dtpDataBatismo.Value;
-                var IsBaptized = IsBatizado.Checked;
-                var isMemberC = isMemberCard.Checked;
-                var isSpirit = IsBatizedWithSpirit.Checked;
-                var status = cbxStatus.Text;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Alert Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
         private void RegistrarnoBancoSQL()
         {
             string connectionString = @"Data Source=ASUSX512FJC\SQLSERVER;Initial Catalog=AppConnectedChurchDatabase;Integrated Security=True";
@@ -774,12 +739,13 @@ namespace OrionWinForms
 
                     try
                     {
-                        string insertMemberSQL = "INSERT INTO Members( IdFamily, IdMaritalStatus, FirstName, LastName, Father, Mother, BirthDay, BirthPlace, BirthPlaceUF, Nationality, RG, CPF, Gender, Status, PictureProfile, Age)" +
-                                                            " VALUES( @familia, @estCivil, @nome, @sobrenome, @pai, @mae, @dataNascimento, @cidadeNascimento, @ufNascimento, @nacionalidade, @rg, @cpf, @genero, @status, @pictureProfile, @idade); SELECT SCOPE_IDENTITY()";
+                        //insert na tabela members
+                        string insertMemberSQL = "INSERT INTO Members( IdFamily, IdMaritalStatus, FirstName, LastName, Father, Mother, BirthDay, BirthPlace, BirthPlaceUF, Nationality, RG, CPF, Gender, Status, PictureProfile, Age, RegisterDate, LastUpdateDate)" +
+                                                            " VALUES( @familia, @estCivil, @nome, @sobrenome, @pai, @mae, @dataNascimento, @cidadeNascimento, @ufNascimento, @nacionalidade, @rg, @cpf, @genero, @status, @pictureProfile, @idade, @dateregister, @dateupdate); SELECT SCOPE_IDENTITY()";
 
                         SqlCommand cmdMember = new SqlCommand(insertMemberSQL, connection, transaction);
                         cmdMember.Parameters.AddWithValue("@familia", cbxFamily.SelectedValue);
-                        cmdMember.Parameters.AddWithValue("@estCivil", cbxEstadoCivil.Text);
+                        cmdMember.Parameters.AddWithValue("@estCivil", cbxEstadoCivil.SelectedValue);
                         cmdMember.Parameters.AddWithValue("@nome", txtNome.Text);
                         cmdMember.Parameters.AddWithValue("@sobrenome", txtSobrenome.Text);
                         cmdMember.Parameters.AddWithValue("@pai", txtNomePai.Text);
@@ -788,49 +754,63 @@ namespace OrionWinForms
                         cmdMember.Parameters.AddWithValue("@cidadeNascimento", txtCidadeNascimento.Text);
                         cmdMember.Parameters.AddWithValue("@ufNascimento", cbxUFNascimento.Text);
                         cmdMember.Parameters.AddWithValue("@nacionalidade", txtNacionalidade.Text);
-                        cmdMember.Parameters.AddWithValue("@rg", mskRG.Text);
-                        cmdMember.Parameters.AddWithValue("@cPF", mskCPF.Text);
+                        cmdMember.Parameters.AddWithValue("@rg", mskRG.Text.Replace(".","").Replace("-",""));
+                        cmdMember.Parameters.AddWithValue("@cpf", mskCPF.Text.Replace(".", "").Replace("-", ""));
                         cmdMember.Parameters.AddWithValue("@genero", cbxGenero.Text);
                         cmdMember.Parameters.AddWithValue("@status", cbxStatus.Text);
-                        var nomeDoMembro = txtNome.Text + txtSobrenome.Text;
+                        var nomeDoMembro = txtNome.Text;
                         var pictureProfile = @"c:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + ".jpg";
                         cmdMember.Parameters.AddWithValue("@pictureProfile", pictureProfile);
                         cmdMember.Parameters.AddWithValue("@idade", txtIdade.Text);
+                        cmdMember.Parameters.AddWithValue("@dateregister", DateTime.UtcNow);
+                        cmdMember.Parameters.AddWithValue("@dateupdate", DateTime.UtcNow);
 
-                        string insertContactSQL = "INSERT INTO Contact(IdMember, CellPhone, Email)VALUES(@cell, @mail); SELECT SCOPE_IDENTITY()";
+
+
+                        //insert na tabela contact
+                        string insertContactSQL = "INSERT INTO Contact(MembroCPF, MembroRG, CellPhone, Email)VALUES(@cpf, @rg, @cel, @mail); SELECT SCOPE_IDENTITY()";
                         SqlCommand cmdContact = new SqlCommand(insertContactSQL, connection, transaction);
-                        cmdContact.Parameters.AddWithValue("@cel", mskCellFone.Text);
+                        cmdContact.Parameters.AddWithValue("@cel", mskCellFone.Text.Replace("(","").Replace(")","").Replace("-",""));
                         cmdContact.Parameters.AddWithValue("@mail", mskEmail.Text);
+                        cmdContact.Parameters.AddWithValue("@rg", mskRG.Text.Replace(".", "").Replace("-", ""));
+                        cmdContact.Parameters.AddWithValue("@cpf", mskCPF.Text.Replace(".", "").Replace("-", ""));
 
 
-                        string insertAddressSQL = "INSERT INTO Address(IdMember, Address, City, State, Country, Zip)VALUES(); SELECT SCOPE_IDENTITY()";
+                        //insert na tabela address
+                        string insertAddressSQL = "INSERT INTO Address(MembroCPF, MembroRG, Address, Neighborhood, City, State, Country, Zip)"+
+                                                               "VALUES(@cpf, @rg, @address, @neighborhood, @city, @uf, @country, @cep); SELECT SCOPE_IDENTITY()";
                         SqlCommand cmdAddress = new SqlCommand(insertAddressSQL, connection, transaction);
                         var Address = txtLogradouro.Text + ", " + txtNumAddress.Text + ", " + txtComplementoAddress.Text;
                         cmdAddress.Parameters.AddWithValue("@address", Address);
                         cmdAddress.Parameters.AddWithValue("@city", txtCidadeAddress.Text);
                         cmdAddress.Parameters.AddWithValue("@uf", cbxUFAddress.Text);
                         cmdAddress.Parameters.AddWithValue("@country", txtPaisaddress.Text);
-                        cmdAddress.Parameters.AddWithValue("@cep", mskCEPAddress.Text);
+                        cmdAddress.Parameters.AddWithValue("@cep", mskCEPAddress.Text.Replace("-",""));
+                        cmdAddress.Parameters.AddWithValue("@rg", mskRG.Text.Replace(".", "").Replace("-", ""));
+                        cmdAddress.Parameters.AddWithValue("@cpf", mskCPF.Text.Replace(".", "").Replace("-", ""));
+                        cmdAddress.Parameters.AddWithValue("@neighborhood", txtNeighborhood.Text);
 
-                        string insertProfessionalInfoSQL = "INSERT INTO ProfessionalInfo(Schooling, Profession, AdmissionDateChurch, HaveCardChurch, IsBaptizedWaterChurch, IsBaptizedSpiritChurch, AdmissionByChurch, CurrentSector, PreviousSector, CurrentChurch, PreviousChurch, Office, BaptizedChurch, BaptizedDate)" +
-                                                                                    "VALUES(@escolar, @profissao, @dtAdmissao, @isMemberCard, @IsBaptized, @admitidoPor, @setorAtual,@setorAnterior,@congrAtual,@congreAnterior,@funtion,@congrBatismo,@dtBatismo); SELECT SCOPE_IDENTITY()";
+
+                        //insert na tabela professionalINfo
+                        string insertProfessionalInfoSQL = "INSERT INTO ProfessionalInfo(MembroCPF, MembroRG, Schooling, Profession, AdmissionDateChurch, HaveCardChurch, IsBaptizedWaterChurch, IsBaptizedSpiritChurch, AdmissionByChurch, CurrentSector, PreviousSector, CurrentChurch, PreviousChurch, Office, BaptizedChurch, BaptizedDate)" +
+                                                                                    "VALUES(@cpf, @rg, @escolar, @profissao, @dtAdmissao, @isMemberCard, @IsBaptized, @isSpirit, @admitidoPor, @setorAtual, @setorAnterior, @congrAtual, @congrAnterior, @function, @congrBatismo, @dtBatismo); SELECT SCOPE_IDENTITY()";
                         SqlCommand cmdProfessionalInfo = new SqlCommand(insertProfessionalInfoSQL, connection, transaction);
+                        cmdProfessionalInfo.Parameters.AddWithValue("@rg", mskRG.Text.Replace(".", "").Replace("-", ""));
+                        cmdProfessionalInfo.Parameters.AddWithValue("@cpf", mskCPF.Text.Replace(".", "").Replace("-", ""));
                         cmdProfessionalInfo.Parameters.AddWithValue("@escolar", cbxEscolaridade.Text);
                         cmdProfessionalInfo.Parameters.AddWithValue("@profissao", txtProfissao.Text);
-                        cmdProfessionalInfo.Parameters.AddWithValue("@dtAdmissao", dtpDataAdmissao.Value);
+                        cmdProfessionalInfo.Parameters.AddWithValue("@dtAdmissao", dtpDataAdmissao.Value.Date);
                         cmdProfessionalInfo.Parameters.AddWithValue("@isMemberCard", isMemberCard.Checked);
                         cmdProfessionalInfo.Parameters.AddWithValue("@IsBaptized", IsBatizado.Checked);
                         cmdProfessionalInfo.Parameters.AddWithValue("@isSpirit", IsBatizedWithSpirit.Checked);
                         cmdProfessionalInfo.Parameters.AddWithValue("@admitidoPor", cbxOpcaoAdmissao.Text);
-
                         cmdProfessionalInfo.Parameters.AddWithValue("@setorAtual", cbxSetorAtual.Text);
                         cmdProfessionalInfo.Parameters.AddWithValue("@setorAnterior", cbxSetorAnterior.Text);
                         cmdProfessionalInfo.Parameters.AddWithValue("@congrAtual", cbxCongregacaoAtual.Text);
                         cmdProfessionalInfo.Parameters.AddWithValue("@congrAnterior", cbxCongregacaoAnterior.Text);
-
                         cmdProfessionalInfo.Parameters.AddWithValue("@function", cbxFuncao.Text);
                         cmdProfessionalInfo.Parameters.AddWithValue("@congrBatismo", cbxIgrejaDeBatismo.Text);
-                        cmdProfessionalInfo.Parameters.AddWithValue("@dtBatismo", dtpDataBatismo.Value);
+                        cmdProfessionalInfo.Parameters.AddWithValue("@dtBatismo", dtpDataBatismo.Value.Date);
 
                         cmdMember.ExecuteNonQuery();
                         cmdContact.ExecuteNonQuery();
@@ -839,6 +819,7 @@ namespace OrionWinForms
 
                         transaction.Commit();
                         MessageBox.Show("Registro inserido com sucesso", "Inserção de Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
                     catch (SqlException ex)
                     {
@@ -853,6 +834,50 @@ namespace OrionWinForms
                 MessageBox.Show("Erro ao conectar ao Servidor: " + ex.Message, "Erro ao conectar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ResetarCampos()
+        {
+            // atribui valores vazios ou padrões aos controles
+            txtNome.Text = string.Empty;
+            txtSobrenome.Text = string.Empty;
+            txtNomePai.Text = string.Empty;
+            txtNomeMae.Text = string.Empty;
+            dtpDataNascimento.Value = DateTime.Now;
+            txtCidadeNascimento.Text = string.Empty;
+            cbxUFNascimento.SelectedIndex = -1;
+            txtNacionalidade.Text = string.Empty;
+            txtIdade.Text = string.Empty;
+            mskRG.Text = string.Empty;
+            mskCPF.Text = string.Empty;
+            cbxGenero.SelectedIndex = -1;
+            cbxEstadoCivil.SelectedIndex = -1;
+            mskCellFone.Text = string.Empty;
+            mskEmail.Text = string.Empty;
+            cbxEscolaridade.SelectedIndex = -1;
+            txtProfissao.Text = string.Empty;
+            txtLogradouro.Text = string.Empty;
+            txtNumAddress.Text = string.Empty;
+            txtComplementoAddress.Text = string.Empty;
+            txtCidadeAddress.Text = string.Empty;
+            cbxUFAddress.SelectedIndex = -1;
+            txtPaisaddress.Text = string.Empty;
+            mskCEPAddress.Text = string.Empty;
+            cbxSetorAtual.SelectedIndex = -1;
+            cbxSetorAnterior.SelectedIndex = -1;
+            cbxCongregacaoAtual.SelectedIndex = -1;
+            cbxCongregacaoAnterior.SelectedIndex = -1;
+            cbxOpcaoAdmissao.SelectedIndex = -1;
+            dtpDataAdmissao.Value = DateTime.Now;
+            cbxFuncao.SelectedIndex = -1;
+            cbxIgrejaDeBatismo.SelectedIndex = -1;
+            dtpDataBatismo.Value = DateTime.Now;
+            IsBatizado.Checked = false;
+            isMemberCard.Checked = false;
+            IsBatizedWithSpirit.Checked = false;
+            cbxStatus.SelectedIndex = -1;
+
+        }
+       
         private void GerarArquivoPdf() { }
         private void GerarArquivoCSV() { }
         private void GerarArquivoJSON() { }
@@ -883,5 +908,6 @@ namespace OrionWinForms
             CadastrarFamilia frmCadastrarFamilia = new CadastrarFamilia();
             frmCadastrarFamilia.Show();
         }
+
     }
 }
