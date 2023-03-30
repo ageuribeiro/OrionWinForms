@@ -52,20 +52,23 @@ namespace OrionWinForms
             // 
             this.txtPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtPesquisar.Location = new System.Drawing.Point(118, 12);
+            this.txtPesquisar.Location = new System.Drawing.Point(118, 17);
             this.txtPesquisar.Multiline = true;
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(505, 42);
+            this.txtPesquisar.PlaceholderText = "Pesquise por Nome, Sobrenome, RG, CPF e Telefone";
+            this.txtPesquisar.Size = new System.Drawing.Size(634, 31);
             this.txtPesquisar.TabIndex = 1;
+            this.txtPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(629, 12);
+            this.btnPesquisar.Location = new System.Drawing.Point(758, 17);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(137, 42);
+            this.btnPesquisar.Size = new System.Drawing.Size(137, 31);
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // dataGridView1
             // 
@@ -82,41 +85,44 @@ namespace OrionWinForms
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(754, 381);
+            this.dataGridView1.Size = new System.Drawing.Size(883, 381);
             this.dataGridView1.TabIndex = 3;
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(772, 60);
+            this.btnAtualizar.Location = new System.Drawing.Point(901, 60);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(132, 42);
             this.btnAtualizar.TabIndex = 4;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnDeletar
             // 
-            this.btnDeletar.Location = new System.Drawing.Point(772, 108);
+            this.btnDeletar.Location = new System.Drawing.Point(901, 108);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(132, 42);
             this.btnDeletar.TabIndex = 5;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnRelatorios
             // 
-            this.btnRelatorios.Location = new System.Drawing.Point(772, 153);
+            this.btnRelatorios.Location = new System.Drawing.Point(901, 153);
             this.btnRelatorios.Name = "btnRelatorios";
             this.btnRelatorios.Size = new System.Drawing.Size(132, 42);
             this.btnRelatorios.TabIndex = 6;
             this.btnRelatorios.Text = "Relatórios";
             this.btnRelatorios.UseVisualStyleBackColor = true;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             // 
             // PesquisarMembro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 453);
+            this.ClientSize = new System.Drawing.Size(1045, 453);
             this.Controls.Add(this.btnRelatorios);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnAtualizar);
