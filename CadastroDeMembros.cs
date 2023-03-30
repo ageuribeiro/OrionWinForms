@@ -452,13 +452,6 @@ namespace OrionWinForms
                 //msg = "Gerando arquivo em formato PDF...";
                 //MessageBox.Show(msg);
 
-                GerarArquivoCSV();
-                //msg = "Gerando arquivo em formato CSV...";
-                //MessageBox.Show(msg);
-
-                GerarArquivoJSON();
-                //msg = "Gerando arquivo em fomrato JSON...";
-                //MessageBox.Show(msg);
 
                 ResetarCampos();
 
