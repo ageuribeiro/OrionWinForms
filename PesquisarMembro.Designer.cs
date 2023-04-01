@@ -114,7 +114,7 @@ namespace OrionWinForms
             this.btnRelatorios.Name = "btnRelatorios";
             this.btnRelatorios.Size = new System.Drawing.Size(132, 42);
             this.btnRelatorios.TabIndex = 6;
-            this.btnRelatorios.Text = "Relatórios";
+            this.btnRelatorios.Text = "Imprimir";
             this.btnRelatorios.UseVisualStyleBackColor = true;
             this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             // 
@@ -131,6 +131,7 @@ namespace OrionWinForms
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.lblPesquisar);
             this.Name = "PesquisarMembro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Membros";
             this.Load += new System.EventHandler(this.PesquisarMembro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

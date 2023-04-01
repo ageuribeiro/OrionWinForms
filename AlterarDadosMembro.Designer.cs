@@ -48,9 +48,9 @@ namespace OrionWinForms
             this.mskEmail = new System.Windows.Forms.MaskedTextBox();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.gbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.cbxFuncao = new System.Windows.Forms.ComboBox();
             this.lblBairro = new System.Windows.Forms.Label();
             this.txtNeighborhood = new System.Windows.Forms.TextBox();
-            this.cbxFuncao = new System.Windows.Forms.ComboBox();
             this.gbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,6 +234,14 @@ namespace OrionWinForms
             this.gbDadosPessoais.TabStop = false;
             this.gbDadosPessoais.Text = "Dados Pessoais";
             // 
+            // cbxFuncao
+            // 
+            this.cbxFuncao.FormattingEnabled = true;
+            this.cbxFuncao.Location = new System.Drawing.Point(6, 254);
+            this.cbxFuncao.Name = "cbxFuncao";
+            this.cbxFuncao.Size = new System.Drawing.Size(365, 28);
+            this.cbxFuncao.TabIndex = 64;
+            // 
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
@@ -250,14 +258,6 @@ namespace OrionWinForms
             this.txtNeighborhood.Size = new System.Drawing.Size(366, 27);
             this.txtNeighborhood.TabIndex = 62;
             // 
-            // cbxFuncao
-            // 
-            this.cbxFuncao.FormattingEnabled = true;
-            this.cbxFuncao.Location = new System.Drawing.Point(6, 254);
-            this.cbxFuncao.Name = "cbxFuncao";
-            this.cbxFuncao.Size = new System.Drawing.Size(365, 28);
-            this.cbxFuncao.TabIndex = 64;
-            // 
             // AlterarDadosMembro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -266,6 +266,7 @@ namespace OrionWinForms
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gbDadosPessoais);
             this.Name = "AlterarDadosMembro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Dados do Membro";
             this.gbDadosPessoais.ResumeLayout(false);
             this.gbDadosPessoais.PerformLayout();

@@ -225,6 +225,7 @@ namespace OrionWinForms
             this.Controls.Add(this.lblNomeSetor);
             this.Controls.Add(this.lblNumeroSetor);
             this.Name = "CadastrarSetor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Setor";
             this.Load += new System.EventHandler(this.CadastrarSetor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

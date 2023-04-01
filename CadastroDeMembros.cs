@@ -17,7 +17,6 @@ namespace OrionWinForms
         }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-           
 
             dtpDataNascimento.Value = DateTime.Now.Date;
             dtpDataAdmissao.Value = DateTime.Now.Date;
@@ -449,9 +448,6 @@ namespace OrionWinForms
                 RegistrarnoBancoSQL();
 
                 GerarArquivoPdf();
-                //msg = "Gerando arquivo em formato PDF...";
-                //MessageBox.Show(msg);
-
 
                 ResetarCampos();
 
@@ -872,34 +868,32 @@ namespace OrionWinForms
         }
        
         private void GerarArquivoPdf() { }
-        private void GerarArquivoCSV() { }
-        private void GerarArquivoJSON() { }
-   
+
         private void btnCaptureImagem_Click(object sender, EventArgs e)
         {
             CapturarImagem frmCapturarImagem = new CapturarImagem();
-            frmCapturarImagem.Show();
+            frmCapturarImagem.ShowDialog();
         }
         private void btnPesquisarMembro_Click(object sender, EventArgs e)
         {
             PesquisarMembro frmPesquisarMembro = new PesquisarMembro();
-            frmPesquisarMembro.Show();
+            frmPesquisarMembro.ShowDialog();
         }
         private void btnCadastrarSetor_Click(object sender, EventArgs e)
         {
             CadastrarSetor frmCadastrarSetor = new CadastrarSetor();
-            frmCadastrarSetor.Show();
+            frmCadastrarSetor.ShowDialog();
         }
         private void btnCadastrarIgreja_Click(object sender, EventArgs e)
         {
             CadastrarIgreja frmCadastrarIgreja = new CadastrarIgreja();
-            frmCadastrarIgreja.Show();
+            frmCadastrarIgreja.ShowDialog();
         }
 
         private void btnGerarFamilia_Click(object sender, EventArgs e)
         {
             CadastrarFamilia frmCadastrarFamilia = new CadastrarFamilia();
-            frmCadastrarFamilia.Show();
+            frmCadastrarFamilia.ShowDialog();
         }
 
     }

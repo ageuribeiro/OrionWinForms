@@ -41,24 +41,22 @@ namespace OrionWinForms
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataSet data = new DataSet();
                 adapter.Fill(data);
-                dataGridView1.DataSource = data.Tables[0];
+                if (data.Tables[0].Rows.Count>0)
+                {
+                    dataGridView1.DataSource = data.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("Não existe informação no banco de dados.","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+               
             }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.RowCount == 0)
-            {
-                MessageBox.Show("O DataGridView não contem dados.");
-            }
-            else
-            {
-                if (txtPesquisar.Text == string.Empty)
-                {
-                    CarregarDatagridView();
-                }
-                FiltrarGrade();
-            }
+            CarregarDatagridView();
+            FiltrarGrade();
         }
 
         private void FiltrarGrade()
@@ -82,6 +80,7 @@ namespace OrionWinForms
                             dataGridView1.DataSource = dt;
                         }
                     }
+                    connection.Close();
                 }
             }
             catch(Exception ex)
@@ -112,12 +111,6 @@ namespace OrionWinForms
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.RowCount == 0)
-            {
-                MessageBox.Show("O DataGridView não contem dados.");
-            }
-            else
-            {
                 string connectionString = @"Data Source=ASUSX512FJC\SQLSERVER;Initial Catalog=AppConnectedChurchDatabase;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -133,7 +126,7 @@ namespace OrionWinForms
                         commandAddress.Parameters.AddWithValue("@RG", RG);
                         commandAddress.Parameters.AddWithValue("@CPF", CPF);
                         connection.Open();
-                        commandAddress.ExecuteNonQuery();
+                        int rowsDeletedAddress = commandAddress.ExecuteNonQuery();
                         connection.Close();
 
                         //Excluir a linha correspondente da tabela "Contact" no banco de dados
@@ -142,7 +135,7 @@ namespace OrionWinForms
                         commandContact.Parameters.AddWithValue("@RG", RG);
                         commandContact.Parameters.AddWithValue("@CPF", CPF);
                         connection.Open();
-                        commandContact.ExecuteNonQuery();
+                        int rowsDeletedContacts = commandContact.ExecuteNonQuery();
                         connection.Close();
 
                         //Excluir a linha correspondente da tabela "Contact" no banco de dados
@@ -151,7 +144,7 @@ namespace OrionWinForms
                         commandProfessionalInfo.Parameters.AddWithValue("@RG", RG);
                         commandProfessionalInfo.Parameters.AddWithValue("@CPF", CPF);
                         connection.Open();
-                        commandProfessionalInfo.ExecuteNonQuery();
+                        int rowsDeletedProfessionalInfo = commandProfessionalInfo.ExecuteNonQuery();
                         connection.Close();
 
                         //Excluir a linha correspondete da tabela "Members" do banco de dados
@@ -160,32 +153,32 @@ namespace OrionWinForms
                         commandMembers.Parameters.AddWithValue("@RG", RG);
                         commandMembers.Parameters.AddWithValue("@CPF", CPF);
                         connection.Open();
-                        commandMembers.ExecuteNonQuery();
+                        int rowsDeletedMembers = commandMembers.ExecuteNonQuery();
                         connection.Close();
 
-                        DataGridViewRow row = dataGridView1.CurrentRow;
-                        if (row != null)
+                        //Verifica se alguma linha foi excluida nas tabelas
+                        if(rowsDeletedAddress > 0 || rowsDeletedContacts > 0 || rowsDeletedProfessionalInfo > 0 || rowsDeletedMembers > 0)
                         {
-                            dataGridView1.Rows.Remove(row);
+                            DataGridViewRow row = dataGridView1.CurrentRow;
+                            if (row != null)
+                            {
+                                dataGridView1.Rows.Remove(row);
+                            }
                         }
+
                     }
                 }
-            }
+        
         }
 
         private void btnRelatorios_Click(object sender, EventArgs e)
-        {
 
+        {
+            FrmMember frmMember = new FrmMember();
+            frmMember.ShowDialog();
+             
         }
 
-        private void GerarRelatorioIndividual() 
-        {
-            
-        }
-
-        private void GerarRelatorioGeral()
-        {
-
-        }
+ 
     }
 }

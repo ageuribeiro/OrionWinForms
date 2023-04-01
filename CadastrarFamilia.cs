@@ -24,6 +24,7 @@ namespace OrionWinForms
         private void btnGerarFamilia_Click(object sender, EventArgs e)
         {
             InserirFamilia();
+            CarregarDataGridView();
         }
         private void InserirFamilia()
         {
@@ -70,6 +71,25 @@ namespace OrionWinForms
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao conectar ao Servidor: " + ex.Message, "Erro ao conectar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CadastrarFamilia_Load(object sender, EventArgs e)
+        {
+            CarregarDataGridView();
+        }
+        
+        private void CarregarDataGridView()
+        {
+            string connectionString = @"Data Source=ASUSX512FJC\SQLSERVER;Initial Catalog=AppConnectedChurchDatabase;Integrated Security=True";
+            string query = "SELECT * FROM Family";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataSet data = new DataSet();
+                adapter.Fill(data);
+                dataGridViewFamily.DataSource = data.Tables[0];
+                
             }
         }
     }

@@ -30,137 +30,139 @@ namespace OrionWinForms
         private void InitializeComponent()
         {
             this.lblSetor = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxSetor = new System.Windows.Forms.ComboBox();
             this.lblIgreja = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNomeIgreja = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEnderecoIgreja = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCidadeIgreja = new System.Windows.Forms.TextBox();
             this.lblUF = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxUF = new System.Windows.Forms.ComboBox();
             this.lblCEP = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCepIgreja = new System.Windows.Forms.TextBox();
             this.lblPAstor = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtPastorIgreja = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lblPais = new System.Windows.Forms.Label();
+            this.txtPais = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSetor
             // 
             this.lblSetor.AutoSize = true;
-            this.lblSetor.Location = new System.Drawing.Point(12, 9);
+            this.lblSetor.Location = new System.Drawing.Point(12, 14);
             this.lblSetor.Name = "lblSetor";
             this.lblSetor.Size = new System.Drawing.Size(44, 20);
             this.lblSetor.TabIndex = 0;
             this.lblSetor.Text = "Setor";
             // 
-            // comboBox1
+            // cbxSetor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 1;
+            this.cbxSetor.FormattingEnabled = true;
+            this.cbxSetor.Location = new System.Drawing.Point(12, 37);
+            this.cbxSetor.Name = "cbxSetor";
+            this.cbxSetor.Size = new System.Drawing.Size(178, 28);
+            this.cbxSetor.TabIndex = 1;
             // 
             // lblIgreja
             // 
             this.lblIgreja.AutoSize = true;
-            this.lblIgreja.Location = new System.Drawing.Point(170, 9);
+            this.lblIgreja.Location = new System.Drawing.Point(196, 11);
             this.lblIgreja.Name = "lblIgreja";
             this.lblIgreja.Size = new System.Drawing.Size(47, 20);
             this.lblIgreja.TabIndex = 2;
             this.lblIgreja.Text = "Igreja";
             // 
-            // textBox1
+            // txtNomeIgreja
             // 
-            this.textBox1.Location = new System.Drawing.Point(169, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 27);
-            this.textBox1.TabIndex = 3;
+            this.txtNomeIgreja.Location = new System.Drawing.Point(196, 37);
+            this.txtNomeIgreja.Name = "txtNomeIgreja";
+            this.txtNomeIgreja.Size = new System.Drawing.Size(254, 27);
+            this.txtNomeIgreja.TabIndex = 3;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(403, 9);
+            this.lblAddress.Location = new System.Drawing.Point(457, 11);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(71, 20);
             this.lblAddress.TabIndex = 4;
             this.lblAddress.Text = "Endereço";
             // 
-            // textBox2
+            // txtEnderecoIgreja
             // 
-            this.textBox2.Location = new System.Drawing.Point(402, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(303, 27);
-            this.textBox2.TabIndex = 5;
+            this.txtEnderecoIgreja.Location = new System.Drawing.Point(456, 37);
+            this.txtEnderecoIgreja.Name = "txtEnderecoIgreja";
+            this.txtEnderecoIgreja.Size = new System.Drawing.Size(303, 27);
+            this.txtEnderecoIgreja.TabIndex = 5;
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(712, 9);
+            this.lblCity.Location = new System.Drawing.Point(766, 11);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(56, 20);
             this.lblCity.TabIndex = 6;
             this.lblCity.Text = "Cidade";
             // 
-            // textBox3
+            // txtCidadeIgreja
             // 
-            this.textBox3.Location = new System.Drawing.Point(711, 35);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 27);
-            this.textBox3.TabIndex = 7;
+            this.txtCidadeIgreja.Location = new System.Drawing.Point(765, 37);
+            this.txtCidadeIgreja.Name = "txtCidadeIgreja";
+            this.txtCidadeIgreja.Size = new System.Drawing.Size(148, 27);
+            this.txtCidadeIgreja.TabIndex = 7;
             // 
             // lblUF
             // 
             this.lblUF.AutoSize = true;
-            this.lblUF.Location = new System.Drawing.Point(865, 9);
+            this.lblUF.Location = new System.Drawing.Point(919, 10);
             this.lblUF.Name = "lblUF";
             this.lblUF.Size = new System.Drawing.Size(26, 20);
             this.lblUF.TabIndex = 8;
             this.lblUF.Text = "UF";
             // 
-            // comboBox2
+            // cbxUF
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(865, 35);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(53, 28);
-            this.comboBox2.TabIndex = 9;
+            this.cbxUF.FormattingEnabled = true;
+            this.cbxUF.Location = new System.Drawing.Point(919, 36);
+            this.cbxUF.Name = "cbxUF";
+            this.cbxUF.Size = new System.Drawing.Size(80, 28);
+            this.cbxUF.TabIndex = 9;
             // 
             // lblCEP
             // 
             this.lblCEP.AutoSize = true;
-            this.lblCEP.Location = new System.Drawing.Point(12, 77);
+            this.lblCEP.Location = new System.Drawing.Point(12, 78);
             this.lblCEP.Name = "lblCEP";
             this.lblCEP.Size = new System.Drawing.Size(37, 20);
             this.lblCEP.TabIndex = 10;
             this.lblCEP.Text = "CEP:";
             // 
-            // textBox4
+            // txtCepIgreja
             // 
-            this.textBox4.Location = new System.Drawing.Point(13, 101);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(150, 27);
-            this.textBox4.TabIndex = 11;
+            this.txtCepIgreja.Location = new System.Drawing.Point(12, 101);
+            this.txtCepIgreja.Name = "txtCepIgreja";
+            this.txtCepIgreja.Size = new System.Drawing.Size(150, 27);
+            this.txtCepIgreja.TabIndex = 11;
             // 
             // lblPAstor
             // 
             this.lblPAstor.AutoSize = true;
-            this.lblPAstor.Location = new System.Drawing.Point(167, 77);
+            this.lblPAstor.Location = new System.Drawing.Point(168, 78);
             this.lblPAstor.Name = "lblPAstor";
             this.lblPAstor.Size = new System.Drawing.Size(49, 20);
             this.lblPAstor.TabIndex = 12;
             this.lblPAstor.Text = "Pastor";
             // 
-            // textBox5
+            // txtPastorIgreja
             // 
-            this.textBox5.Location = new System.Drawing.Point(167, 101);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(229, 27);
-            this.textBox5.TabIndex = 13;
+            this.txtPastorIgreja.Location = new System.Drawing.Point(168, 101);
+            this.txtPastorIgreja.Name = "txtPastorIgreja";
+            this.txtPastorIgreja.Size = new System.Drawing.Size(212, 27);
+            this.txtPastorIgreja.TabIndex = 13;
             // 
             // dataGridView1
             // 
@@ -169,41 +171,62 @@ namespace OrionWinForms
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(905, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(1183, 285);
             this.dataGridView1.TabIndex = 14;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(823, 101);
+            this.btnCadastrar.Location = new System.Drawing.Point(1102, 99);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(94, 29);
             this.btnCadastrar.TabIndex = 15;
             this.btnCadastrar.Text = "Inserir";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // lblPais
+            // 
+            this.lblPais.AutoSize = true;
+            this.lblPais.Location = new System.Drawing.Point(1006, 14);
+            this.lblPais.Name = "lblPais";
+            this.lblPais.Size = new System.Drawing.Size(34, 20);
+            this.lblPais.TabIndex = 16;
+            this.lblPais.Text = "País";
+            // 
+            // txtPais
+            // 
+            this.txtPais.Location = new System.Drawing.Point(1005, 36);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(151, 27);
+            this.txtPais.TabIndex = 17;
             // 
             // CadastrarIgreja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 450);
+            this.ClientSize = new System.Drawing.Size(1208, 450);
+            this.Controls.Add(this.txtPais);
+            this.Controls.Add(this.lblPais);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtPastorIgreja);
             this.Controls.Add(this.lblPAstor);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtCepIgreja);
             this.Controls.Add(this.lblCEP);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbxUF);
             this.Controls.Add(this.lblUF);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtCidadeIgreja);
             this.Controls.Add(this.lblCity);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtEnderecoIgreja);
             this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNomeIgreja);
             this.Controls.Add(this.lblIgreja);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxSetor);
             this.Controls.Add(this.lblSetor);
             this.Name = "CadastrarIgreja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Igreja";
+            this.Load += new System.EventHandler(this.CadastrarIgreja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,20 +236,22 @@ namespace OrionWinForms
         #endregion
 
         private System.Windows.Forms.Label lblSetor;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxSetor;
         private System.Windows.Forms.Label lblIgreja;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNomeIgreja;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEnderecoIgreja;
         private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCidadeIgreja;
         private System.Windows.Forms.Label lblUF;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxUF;
         private System.Windows.Forms.Label lblCEP;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCepIgreja;
         private System.Windows.Forms.Label lblPAstor;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPastorIgreja;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Label lblPais;
+        private System.Windows.Forms.TextBox txtPais;
     }
 }
