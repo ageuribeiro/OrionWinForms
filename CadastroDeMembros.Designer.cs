@@ -869,11 +869,11 @@ namespace OrionWinForms
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(1423, 506);
+            this.btnSalvar.Location = new System.Drawing.Point(1308, 506);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(110, 45);
+            this.btnSalvar.Size = new System.Drawing.Size(225, 45);
             this.btnSalvar.TabIndex = 71;
-            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.Text = "Salvar e Gerar Relatório";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 

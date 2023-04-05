@@ -380,7 +380,6 @@ namespace OrionWinForms
                 }
             }
         }
-
         private void CarregarStatus()
         {
             //Define a conexao com o Banco de Dados
@@ -409,7 +408,6 @@ namespace OrionWinForms
                 }
             }
         }
-
         private void CarregarFamily()
         {
             //Define a conexao com o Banco de Dados
@@ -438,7 +436,6 @@ namespace OrionWinForms
                 }
             }
         }
-
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
 
@@ -823,7 +820,6 @@ namespace OrionWinForms
                 MessageBox.Show("Erro ao conectar ao Servidor: " + ex.Message, "Erro ao conectar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void ResetarCampos()
         {
             // atribui valores vazios ou padrões aos controles
