@@ -59,7 +59,7 @@ namespace OrionWinForms
             this.btnSalvar.Location = new System.Drawing.Point(12, 544);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(136, 45);
-            this.btnSalvar.TabIndex = 81;
+            this.btnSalvar.TabIndex = 20;
             this.btnSalvar.Text = "Alterar Dados";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -111,7 +111,7 @@ namespace OrionWinForms
             this.lblRG.Location = new System.Drawing.Point(9, 303);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(28, 20);
-            this.lblRG.TabIndex = 18;
+            this.lblRG.TabIndex = 12;
             this.lblRG.Text = "RG";
             // 
             // mskRG
@@ -120,7 +120,7 @@ namespace OrionWinForms
             this.mskRG.Mask = "00,000,000-0";
             this.mskRG.Name = "mskRG";
             this.mskRG.Size = new System.Drawing.Size(153, 27);
-            this.mskRG.TabIndex = 19;
+            this.mskRG.TabIndex = 13;
             // 
             // lblFuncaonaIgreja
             // 
@@ -128,7 +128,7 @@ namespace OrionWinForms
             this.lblFuncaonaIgreja.Location = new System.Drawing.Point(7, 231);
             this.lblFuncaonaIgreja.Name = "lblFuncaonaIgreja";
             this.lblFuncaonaIgreja.Size = new System.Drawing.Size(118, 20);
-            this.lblFuncaonaIgreja.TabIndex = 60;
+            this.lblFuncaonaIgreja.TabIndex = 10;
             this.lblFuncaonaIgreja.Text = "Função na Igreja";
             // 
             // lblAddress
@@ -138,7 +138,7 @@ namespace OrionWinForms
             this.lblAddress.Location = new System.Drawing.Point(5, 372);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(71, 20);
-            this.lblAddress.TabIndex = 34;
+            this.lblAddress.TabIndex = 16;
             this.lblAddress.Text = "Endereço";
             // 
             // lblCPF
@@ -147,7 +147,7 @@ namespace OrionWinForms
             this.lblCPF.Location = new System.Drawing.Point(173, 303);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(33, 20);
-            this.lblCPF.TabIndex = 20;
+            this.lblCPF.TabIndex = 14;
             this.lblCPF.Text = "CPF";
             // 
             // txtAddress
@@ -155,7 +155,7 @@ namespace OrionWinForms
             this.txtAddress.Location = new System.Drawing.Point(5, 395);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(366, 27);
-            this.txtAddress.TabIndex = 35;
+            this.txtAddress.TabIndex = 17;
             // 
             // mskCPF
             // 
@@ -163,7 +163,7 @@ namespace OrionWinForms
             this.mskCPF.Mask = "000,000,000-00";
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(198, 27);
-            this.mskCPF.TabIndex = 21;
+            this.mskCPF.TabIndex = 15;
             // 
             // lblTelefone
             // 
@@ -171,7 +171,7 @@ namespace OrionWinForms
             this.lblTelefone.Location = new System.Drawing.Point(6, 97);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(118, 20);
-            this.lblTelefone.TabIndex = 26;
+            this.lblTelefone.TabIndex = 4;
             this.lblTelefone.Text = "Telefone/Celular";
             // 
             // mskCellFone
@@ -180,15 +180,15 @@ namespace OrionWinForms
             this.mskCellFone.Mask = "(99) 00000-0000";
             this.mskCellFone.Name = "mskCellFone";
             this.mskCellFone.Size = new System.Drawing.Size(155, 27);
-            this.mskCellFone.TabIndex = 27;
+            this.mskCellFone.TabIndex = 5;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(166, 97);
+            this.lblEmail.Location = new System.Drawing.Point(173, 99);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(52, 20);
-            this.lblEmail.TabIndex = 28;
+            this.lblEmail.TabIndex = 6;
             this.lblEmail.Text = "E-mail";
             // 
             // mskEmail
@@ -196,7 +196,7 @@ namespace OrionWinForms
             this.mskEmail.Location = new System.Drawing.Point(173, 122);
             this.mskEmail.Name = "mskEmail";
             this.mskEmail.Size = new System.Drawing.Size(198, 27);
-            this.mskEmail.TabIndex = 29;
+            this.mskEmail.TabIndex = 7;
             // 
             // dtpDataNascimento
             // 
@@ -240,7 +240,7 @@ namespace OrionWinForms
             this.cbxFuncao.Location = new System.Drawing.Point(6, 254);
             this.cbxFuncao.Name = "cbxFuncao";
             this.cbxFuncao.Size = new System.Drawing.Size(365, 28);
-            this.cbxFuncao.TabIndex = 64;
+            this.cbxFuncao.TabIndex = 11;
             // 
             // lblBairro
             // 
@@ -248,7 +248,7 @@ namespace OrionWinForms
             this.lblBairro.Location = new System.Drawing.Point(9, 453);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(49, 20);
-            this.lblBairro.TabIndex = 63;
+            this.lblBairro.TabIndex = 18;
             this.lblBairro.Text = "Bairro";
             // 
             // txtNeighborhood
@@ -256,7 +256,7 @@ namespace OrionWinForms
             this.txtNeighborhood.Location = new System.Drawing.Point(5, 476);
             this.txtNeighborhood.Name = "txtNeighborhood";
             this.txtNeighborhood.Size = new System.Drawing.Size(366, 27);
-            this.txtNeighborhood.TabIndex = 62;
+            this.txtNeighborhood.TabIndex = 19;
             // 
             // AlterarDadosMembro
             // 

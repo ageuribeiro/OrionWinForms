@@ -55,7 +55,7 @@ namespace OrionWinForms
             this.label2.Location = new System.Drawing.Point(13, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 20);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Nome da Mãe";
             // 
             // txtNomePaiFamilia
@@ -63,7 +63,7 @@ namespace OrionWinForms
             this.txtNomePaiFamilia.Location = new System.Drawing.Point(123, 6);
             this.txtNomePaiFamilia.Name = "txtNomePaiFamilia";
             this.txtNomePaiFamilia.Size = new System.Drawing.Size(328, 27);
-            this.txtNomePaiFamilia.TabIndex = 2;
+            this.txtNomePaiFamilia.TabIndex = 1;
             // 
             // txtNomeMaeFamilia
             // 
@@ -85,7 +85,7 @@ namespace OrionWinForms
             this.btnGerarFamilia.Location = new System.Drawing.Point(457, 44);
             this.btnGerarFamilia.Name = "btnGerarFamilia";
             this.btnGerarFamilia.Size = new System.Drawing.Size(125, 29);
-            this.btnGerarFamilia.TabIndex = 6;
+            this.btnGerarFamilia.TabIndex = 4;
             this.btnGerarFamilia.Text = "Gerar Família";
             this.btnGerarFamilia.UseVisualStyleBackColor = true;
             this.btnGerarFamilia.Click += new System.EventHandler(this.btnGerarFamilia_Click);

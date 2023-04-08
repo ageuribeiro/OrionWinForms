@@ -171,13 +171,6 @@ namespace OrionWinForms
         
         }
 
-        private void btnRelatorios_Click(object sender, EventArgs e)
-
-        {
-            Report.RelMembers frmMember = new Report.RelMembers();
-            frmMember.ShowDialog();
-             
-        }
 
  
     }

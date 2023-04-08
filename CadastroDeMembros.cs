@@ -1,4 +1,8 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+
+using System.Diagnostics;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -59,6 +63,7 @@ namespace OrionWinForms
                     cbxUFNascimento.DataSource = tabelaUFNascimento;
                     cbxUFNascimento.DisplayMember = "Sigla";
                     cbxUFNascimento.ValueMember = "Id";
+                    cbxUFNascimento.SelectedIndex = -1;
                     reader.Close();
                 }
                 catch (Exception ex)
@@ -88,6 +93,7 @@ namespace OrionWinForms
                     cbxUFAddress.DataSource = tabelaUFAddress;
                     cbxUFAddress.DisplayMember = "Sigla";
                     cbxUFAddress.ValueMember = "Id";
+                    cbxUFAddress.SelectedIndex = -1;
 
                 }
                 catch (Exception ex)
@@ -118,6 +124,7 @@ namespace OrionWinForms
                     cbxGenero.DataSource = tabelaGenero;
                     cbxGenero.DisplayMember = "Name";
                     cbxGenero.ValueMember = "Id";
+                    cbxGenero.SelectedIndex = -1;
 
                     reader.Close();
                 }
@@ -148,6 +155,7 @@ namespace OrionWinForms
                     cbxEstadoCivil.DataSource = tabelaMaritalStatus;
                     cbxEstadoCivil.DisplayMember = "MaritalStatusName";
                     cbxEstadoCivil.ValueMember = "MaritalStatusID";
+                    cbxEstadoCivil.SelectedIndex = -1;
                 }
                 catch (Exception ex)
                 {
@@ -175,6 +183,7 @@ namespace OrionWinForms
                     cbxEscolaridade.DataSource = tabelaEscolaridade;
                     cbxEscolaridade.DisplayMember = "Escolaridade";
                     cbxEscolaridade.ValueMember = "Id";
+                    cbxEscolaridade.SelectedIndex = -1;
                 }
                 catch (Exception ex)
                 {
@@ -442,12 +451,10 @@ namespace OrionWinForms
             if (ValidarDados())
             {
                 GerenciarDiretorios();
-                RegistrarnoBancoSQL();
-
+                CaptureImagem();
                 GerarArquivoPdf();
-
+                RegistrarnoBancoSQL();
                 ResetarCampos();
-
             }
         }
         private bool ValidarDados()
@@ -701,9 +708,9 @@ namespace OrionWinForms
         }
         private void GerenciarDiretorios()
         {
-            var nome = txtNome.Text;
+            string nomeDoMembro = txtNome.Text;
             //Criar diretorio 
-            Directory.CreateDirectory(@"c:\AppOrion\Dados\Membros\" + nome);
+            Directory.CreateDirectory(@"c:\AppOrion\Dados\Membros\" + nomeDoMembro);
             MessageBox.Show("Pasta criada com sucesso!");
         }
         private void RegistrarnoBancoSQL()
@@ -862,14 +869,88 @@ namespace OrionWinForms
             cbxStatus.SelectedIndex = -1;
 
         }
-       
-        private void GerarArquivoPdf() { }
+        private void GerarArquivoPdf() 
+        {
+            Document doc = new Document(PageSize.TABLOID);
+            doc.SetMargins(40, 40, 40, 80);
+            string nomeDoMembro = txtNome.Text;
+            string path = @"c:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + " Relatorio.pdf";
 
-        private void btnCaptureImagem_Click(object sender, EventArgs e)
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
+            doc.Open();
+
+            //Salva a imagem
+            string Simg = @"C:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + ".jpg";
+            try
+            {
+                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Simg);
+                img.ScaleAbsolute(100, 130);
+                doc.Add(img);
+
+                doc.Close();
+                System.Diagnostics.Process.Start(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Paragraph title = new Paragraph();
+            title.Font = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 28,(int)System.Drawing.FontStyle.Bold);
+            title.Alignment = Element.ALIGN_JUSTIFIED;
+            title.Add("CADASTRO DE MEMBRO\n\n");
+            doc.Add(title);
+
+            Paragraph param1 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
+            string c1 = "Nome: " + txtNome.Text + " " + txtSobrenome.Text + " Nome do Pai: " +txtNomePai.Text+" Nome da Mãe: "+txtNomeMae.Text + " Data de Nascimento: "+dtpDataNascimento.Text+" Cidade de Nascimento: "+ txtCidadeNascimento.Text+ " Estado de Nascimento: "+cbxUFNascimento.Text+" Nacionalidade: "+txtNacionalidade.Text;
+            param1.Add(c1);
+            doc.Add(param1);
+
+            Paragraph param2 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
+            string c2 = "Idade: " + txtIdade.Text + " RG: " + mskRG.Text + " CPF: " + mskCPF.Text + " Gênero: " + cbxGenero.Text + " Estado Civil: " + cbxEstadoCivil.Text + " Celular: " + mskCellFone.Text + " E-mail: " + mskEmail.Text + " Escolariade: " + cbxEscolaridade.Text + " Profissão: " + txtProfissao.Text;
+            param2.Add(c2);
+            doc.Add(param2);
+
+            Paragraph param3 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
+            string c3 = "Setor Atual: " + cbxSetorAtual.Text + " Congregação Atual: " + cbxCongregacaoAtual.Text + " Setor Anterior " + cbxSetorAnterior.Text + " Congregação Anterior " + cbxCongregacaoAnterior.Text + " Admitido na Igreja Por: " + cbxOpcaoAdmissao.Text + " Data da Admissão: " + dtpDataAdmissao.Text + " Função na Igreja: " + cbxFuncao.Text;
+            param3.Add(c3);
+            doc.Add(param3);
+
+            Paragraph param4 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
+            string c4 = "Congregação de Batismo: " + cbxIgrejaDeBatismo.Text + " Data do Batismo: " + dtpDataBatismo.Text + "Status: " + cbxStatus.Text + " Familia: " + cbxFamily.Text;
+            param4.Add(c4);
+            doc.Add(param4);
+
+            Paragraph param5 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
+            string c5 = "Logradouro: " + txtLogradouro.Text + " Número: " + txtNumAddress.Text + " Complemento: " + txtComplementoAddress.Text + " Bairro: " + txtNeighborhood.Text + " Cidade: " + txtCidadeAddress.Text + " Estado: " + cbxUFAddress.Text + " País: " + txtPaisaddress.Text + " CEP: " + mskCEPAddress.Text;
+            param5.Add(c5);
+            doc.Add(param5);
+
+            Paragraph param6 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
+            string c6 = "Membro é batizado nas Aguas?" + IsBatizado.Checked + " Membro é Batizado com Espírito Santo? " +IsBatizedWithSpirit.Checked+ " Membro tem Cartão? " +isMemberCard.Checked;
+            param6.Add(c6);
+            doc.Add(param6);
+            //PdfPTable table = new PdfPTable(3);
+            //for(int i = 1; i <= 10; i++)
+            //{
+            //    table.AddCell("Linha " + i + ", Coluna 1");
+            //    table.AddCell("Linha " + i + ", Coluna 2");
+            //    table.AddCell("Linha " + i + ", Coluna 3");
+            //}
+
+            //doc.Add(table);
+
+
+            
+
+        }
+
+        private void CaptureImagem()
         {
             CapturarImagem frmCapturarImagem = new CapturarImagem();
             frmCapturarImagem.ShowDialog();
         }
+
         private void btnPesquisarMembro_Click(object sender, EventArgs e)
         {
             PesquisarMembro frmPesquisarMembro = new PesquisarMembro();

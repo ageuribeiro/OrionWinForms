@@ -93,7 +93,7 @@ namespace OrionWinForms
             this.btnAtualizar.Location = new System.Drawing.Point(901, 60);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(132, 42);
-            this.btnAtualizar.TabIndex = 4;
+            this.btnAtualizar.TabIndex = 3;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
@@ -103,7 +103,7 @@ namespace OrionWinForms
             this.btnDeletar.Location = new System.Drawing.Point(901, 108);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(132, 42);
-            this.btnDeletar.TabIndex = 5;
+            this.btnDeletar.TabIndex = 4;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = true;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
@@ -113,10 +113,9 @@ namespace OrionWinForms
             this.btnRelatorios.Location = new System.Drawing.Point(901, 153);
             this.btnRelatorios.Name = "btnRelatorios";
             this.btnRelatorios.Size = new System.Drawing.Size(132, 42);
-            this.btnRelatorios.TabIndex = 6;
+            this.btnRelatorios.TabIndex = 5;
             this.btnRelatorios.Text = "Imprimir";
             this.btnRelatorios.UseVisualStyleBackColor = true;
-            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             // 
             // PesquisarMembro
             // 

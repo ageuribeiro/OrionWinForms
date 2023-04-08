@@ -65,7 +65,7 @@ namespace OrionWinForms
             this.lblNomeSetor.Location = new System.Drawing.Point(81, 9);
             this.lblNomeSetor.Name = "lblNomeSetor";
             this.lblNomeSetor.Size = new System.Drawing.Size(50, 20);
-            this.lblNomeSetor.TabIndex = 1;
+            this.lblNomeSetor.TabIndex = 2;
             this.lblNomeSetor.Text = "Nome";
             // 
             // lblEnderecoSetor
@@ -74,7 +74,7 @@ namespace OrionWinForms
             this.lblEnderecoSetor.Location = new System.Drawing.Point(283, 9);
             this.lblEnderecoSetor.Name = "lblEnderecoSetor";
             this.lblEnderecoSetor.Size = new System.Drawing.Size(71, 20);
-            this.lblEnderecoSetor.TabIndex = 2;
+            this.lblEnderecoSetor.TabIndex = 4;
             this.lblEnderecoSetor.Text = "Endereço";
             // 
             // lblCidadeSetor
@@ -83,7 +83,7 @@ namespace OrionWinForms
             this.lblCidadeSetor.Location = new System.Drawing.Point(617, 9);
             this.lblCidadeSetor.Name = "lblCidadeSetor";
             this.lblCidadeSetor.Size = new System.Drawing.Size(56, 20);
-            this.lblCidadeSetor.TabIndex = 3;
+            this.lblCidadeSetor.TabIndex = 6;
             this.lblCidadeSetor.Text = "Cidade";
             // 
             // lblEstadodoSetor
@@ -92,7 +92,7 @@ namespace OrionWinForms
             this.lblEstadodoSetor.Location = new System.Drawing.Point(801, 9);
             this.lblEstadodoSetor.Name = "lblEstadodoSetor";
             this.lblEstadodoSetor.Size = new System.Drawing.Size(26, 20);
-            this.lblEstadodoSetor.TabIndex = 4;
+            this.lblEstadodoSetor.TabIndex = 8;
             this.lblEstadodoSetor.Text = "UF";
             // 
             // lblPaisSetor
@@ -101,7 +101,7 @@ namespace OrionWinForms
             this.lblPaisSetor.Location = new System.Drawing.Point(847, 9);
             this.lblPaisSetor.Name = "lblPaisSetor";
             this.lblPaisSetor.Size = new System.Drawing.Size(34, 20);
-            this.lblPaisSetor.TabIndex = 5;
+            this.lblPaisSetor.TabIndex = 10;
             this.lblPaisSetor.Text = "País";
             // 
             // CEPSetor
@@ -110,7 +110,7 @@ namespace OrionWinForms
             this.CEPSetor.Location = new System.Drawing.Point(1036, 9);
             this.CEPSetor.Name = "CEPSetor";
             this.CEPSetor.Size = new System.Drawing.Size(34, 20);
-            this.CEPSetor.TabIndex = 6;
+            this.CEPSetor.TabIndex = 12;
             this.CEPSetor.Text = "CEP";
             // 
             // lblPastorSetor
@@ -119,7 +119,7 @@ namespace OrionWinForms
             this.lblPastorSetor.Location = new System.Drawing.Point(1167, 9);
             this.lblPastorSetor.Name = "lblPastorSetor";
             this.lblPastorSetor.Size = new System.Drawing.Size(49, 20);
-            this.lblPastorSetor.TabIndex = 7;
+            this.lblPastorSetor.TabIndex = 14;
             this.lblPastorSetor.Text = "Pastor";
             // 
             // txtNumeroSetor
@@ -127,56 +127,56 @@ namespace OrionWinForms
             this.txtNumeroSetor.Location = new System.Drawing.Point(13, 32);
             this.txtNumeroSetor.Name = "txtNumeroSetor";
             this.txtNumeroSetor.Size = new System.Drawing.Size(58, 27);
-            this.txtNumeroSetor.TabIndex = 0;
+            this.txtNumeroSetor.TabIndex = 1;
             // 
             // txtNomeSetor
             // 
             this.txtNomeSetor.Location = new System.Drawing.Point(81, 32);
             this.txtNomeSetor.Name = "txtNomeSetor";
             this.txtNomeSetor.Size = new System.Drawing.Size(196, 27);
-            this.txtNomeSetor.TabIndex = 1;
+            this.txtNomeSetor.TabIndex = 3;
             // 
             // txtEnderecoSetor
             // 
             this.txtEnderecoSetor.Location = new System.Drawing.Point(283, 32);
             this.txtEnderecoSetor.Name = "txtEnderecoSetor";
             this.txtEnderecoSetor.Size = new System.Drawing.Size(328, 27);
-            this.txtEnderecoSetor.TabIndex = 2;
+            this.txtEnderecoSetor.TabIndex = 5;
             // 
             // txtCidadeSetor
             // 
             this.txtCidadeSetor.Location = new System.Drawing.Point(617, 32);
             this.txtCidadeSetor.Name = "txtCidadeSetor";
             this.txtCidadeSetor.Size = new System.Drawing.Size(178, 27);
-            this.txtCidadeSetor.TabIndex = 3;
+            this.txtCidadeSetor.TabIndex = 7;
             // 
             // txtUFSetor
             // 
             this.txtUFSetor.Location = new System.Drawing.Point(801, 32);
             this.txtUFSetor.Name = "txtUFSetor";
             this.txtUFSetor.Size = new System.Drawing.Size(36, 27);
-            this.txtUFSetor.TabIndex = 4;
+            this.txtUFSetor.TabIndex = 9;
             // 
             // txtPaisSetor
             // 
             this.txtPaisSetor.Location = new System.Drawing.Point(843, 32);
             this.txtPaisSetor.Name = "txtPaisSetor";
             this.txtPaisSetor.Size = new System.Drawing.Size(187, 27);
-            this.txtPaisSetor.TabIndex = 5;
+            this.txtPaisSetor.TabIndex = 11;
             // 
             // txtCepSetor
             // 
             this.txtCepSetor.Location = new System.Drawing.Point(1036, 32);
             this.txtCepSetor.Name = "txtCepSetor";
             this.txtCepSetor.Size = new System.Drawing.Size(125, 27);
-            this.txtCepSetor.TabIndex = 6;
+            this.txtCepSetor.TabIndex = 13;
             // 
             // txtPastorSetor
             // 
             this.txtPastorSetor.Location = new System.Drawing.Point(1167, 32);
             this.txtPastorSetor.Name = "txtPastorSetor";
             this.txtPastorSetor.Size = new System.Drawing.Size(164, 27);
-            this.txtPastorSetor.TabIndex = 7;
+            this.txtPastorSetor.TabIndex = 15;
             // 
             // btnCadastratSetor
             // 
@@ -184,7 +184,7 @@ namespace OrionWinForms
             this.btnCadastratSetor.Location = new System.Drawing.Point(1347, 12);
             this.btnCadastratSetor.Name = "btnCadastratSetor";
             this.btnCadastratSetor.Size = new System.Drawing.Size(132, 47);
-            this.btnCadastratSetor.TabIndex = 17;
+            this.btnCadastratSetor.TabIndex = 16;
             this.btnCadastratSetor.Text = "Cadastrar";
             this.btnCadastratSetor.UseVisualStyleBackColor = true;
             this.btnCadastratSetor.Click += new System.EventHandler(this.btnCadastratSetor_Click);

@@ -108,7 +108,6 @@ namespace OrionWinForms
             this.isMemberCard = new System.Windows.Forms.CheckBox();
             this.gpDadosimportantes = new System.Windows.Forms.GroupBox();
             this.IsBatizedWithSpirit = new System.Windows.Forms.CheckBox();
-            this.btnCaptureImagem = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnPesquisarMembro = new System.Windows.Forms.Button();
             this.btnGerarFamilia = new System.Windows.Forms.Button();
@@ -690,7 +689,7 @@ namespace OrionWinForms
             this.txtNeighborhood.Location = new System.Drawing.Point(657, 59);
             this.txtNeighborhood.Name = "txtNeighborhood";
             this.txtNeighborhood.Size = new System.Drawing.Size(125, 27);
-            this.txtNeighborhood.TabIndex = 49;
+            this.txtNeighborhood.TabIndex = 41;
             // 
             // lblNeighborhood
             // 
@@ -698,7 +697,7 @@ namespace OrionWinForms
             this.lblNeighborhood.Location = new System.Drawing.Point(657, 35);
             this.lblNeighborhood.Name = "lblNeighborhood";
             this.lblNeighborhood.Size = new System.Drawing.Size(49, 20);
-            this.lblNeighborhood.TabIndex = 48;
+            this.lblNeighborhood.TabIndex = 40;
             this.lblNeighborhood.Text = "Bairro";
             // 
             // txtComplementoAddress
@@ -739,7 +738,7 @@ namespace OrionWinForms
             this.mskCEPAddress.Mask = "00000-000";
             this.mskCEPAddress.Name = "mskCEPAddress";
             this.mskCEPAddress.Size = new System.Drawing.Size(160, 27);
-            this.mskCEPAddress.TabIndex = 47;
+            this.mskCEPAddress.TabIndex = 49;
             // 
             // lblCEP
             // 
@@ -747,7 +746,7 @@ namespace OrionWinForms
             this.lblCEP.Location = new System.Drawing.Point(1357, 35);
             this.lblCEP.Name = "lblCEP";
             this.lblCEP.Size = new System.Drawing.Size(34, 20);
-            this.lblCEP.TabIndex = 46;
+            this.lblCEP.TabIndex = 48;
             this.lblCEP.Text = "CEP";
             // 
             // txtPaisaddress
@@ -755,7 +754,7 @@ namespace OrionWinForms
             this.txtPaisaddress.Location = new System.Drawing.Point(1155, 60);
             this.txtPaisaddress.Name = "txtPaisaddress";
             this.txtPaisaddress.Size = new System.Drawing.Size(185, 27);
-            this.txtPaisaddress.TabIndex = 45;
+            this.txtPaisaddress.TabIndex = 47;
             // 
             // lblPais
             // 
@@ -763,7 +762,7 @@ namespace OrionWinForms
             this.lblPais.Location = new System.Drawing.Point(1164, 34);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(34, 20);
-            this.lblPais.TabIndex = 44;
+            this.lblPais.TabIndex = 46;
             this.lblPais.Text = "País";
             // 
             // txtCidadeAddress
@@ -771,7 +770,7 @@ namespace OrionWinForms
             this.txtCidadeAddress.Location = new System.Drawing.Point(788, 59);
             this.txtCidadeAddress.Name = "txtCidadeAddress";
             this.txtCidadeAddress.Size = new System.Drawing.Size(204, 27);
-            this.txtCidadeAddress.TabIndex = 41;
+            this.txtCidadeAddress.TabIndex = 43;
             // 
             // cbxUFAddress
             // 
@@ -779,7 +778,7 @@ namespace OrionWinForms
             this.cbxUFAddress.Location = new System.Drawing.Point(998, 59);
             this.cbxUFAddress.Name = "cbxUFAddress";
             this.cbxUFAddress.Size = new System.Drawing.Size(151, 28);
-            this.cbxUFAddress.TabIndex = 43;
+            this.cbxUFAddress.TabIndex = 45;
             // 
             // lblUFAddress
             // 
@@ -787,7 +786,7 @@ namespace OrionWinForms
             this.lblUFAddress.Location = new System.Drawing.Point(1008, 34);
             this.lblUFAddress.Name = "lblUFAddress";
             this.lblUFAddress.Size = new System.Drawing.Size(26, 20);
-            this.lblUFAddress.TabIndex = 42;
+            this.lblUFAddress.TabIndex = 44;
             this.lblUFAddress.Text = "UF";
             // 
             // lblCidadeAddress
@@ -796,7 +795,7 @@ namespace OrionWinForms
             this.lblCidadeAddress.Location = new System.Drawing.Point(794, 35);
             this.lblCidadeAddress.Name = "lblCidadeAddress";
             this.lblCidadeAddress.Size = new System.Drawing.Size(56, 20);
-            this.lblCidadeAddress.TabIndex = 40;
+            this.lblCidadeAddress.TabIndex = 42;
             this.lblCidadeAddress.Text = "Cidade";
             // 
             // txtLogradouro
@@ -857,62 +856,52 @@ namespace OrionWinForms
             this.IsBatizedWithSpirit.Text = "Membro Batizado com Espírito Santo";
             this.IsBatizedWithSpirit.UseVisualStyleBackColor = true;
             // 
-            // btnCaptureImagem
-            // 
-            this.btnCaptureImagem.Location = new System.Drawing.Point(18, 506);
-            this.btnCaptureImagem.Name = "btnCaptureImagem";
-            this.btnCaptureImagem.Size = new System.Drawing.Size(155, 45);
-            this.btnCaptureImagem.TabIndex = 69;
-            this.btnCaptureImagem.Text = "Capturar Imagem";
-            this.btnCaptureImagem.UseVisualStyleBackColor = true;
-            this.btnCaptureImagem.Click += new System.EventHandler(this.btnCaptureImagem_Click);
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(1308, 506);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(225, 45);
-            this.btnSalvar.TabIndex = 71;
+            this.btnSalvar.TabIndex = 55;
             this.btnSalvar.Text = "Salvar e Gerar Relatório";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // btnPesquisarMembro
             // 
-            this.btnPesquisarMembro.Location = new System.Drawing.Point(179, 506);
+            this.btnPesquisarMembro.Location = new System.Drawing.Point(12, 506);
             this.btnPesquisarMembro.Name = "btnPesquisarMembro";
             this.btnPesquisarMembro.Size = new System.Drawing.Size(160, 45);
-            this.btnPesquisarMembro.TabIndex = 70;
+            this.btnPesquisarMembro.TabIndex = 51;
             this.btnPesquisarMembro.Text = "Gerenciar Membro";
             this.btnPesquisarMembro.UseVisualStyleBackColor = true;
             this.btnPesquisarMembro.Click += new System.EventHandler(this.btnPesquisarMembro_Click);
             // 
             // btnGerarFamilia
             // 
-            this.btnGerarFamilia.Location = new System.Drawing.Point(345, 506);
+            this.btnGerarFamilia.Location = new System.Drawing.Point(178, 506);
             this.btnGerarFamilia.Name = "btnGerarFamilia";
             this.btnGerarFamilia.Size = new System.Drawing.Size(160, 45);
-            this.btnGerarFamilia.TabIndex = 72;
+            this.btnGerarFamilia.TabIndex = 52;
             this.btnGerarFamilia.Text = "Cadastrar Família";
             this.btnGerarFamilia.UseVisualStyleBackColor = true;
             this.btnGerarFamilia.Click += new System.EventHandler(this.btnGerarFamilia_Click);
             // 
             // btnCadastrarSetor
             // 
-            this.btnCadastrarSetor.Location = new System.Drawing.Point(509, 506);
+            this.btnCadastrarSetor.Location = new System.Drawing.Point(342, 506);
             this.btnCadastrarSetor.Name = "btnCadastrarSetor";
             this.btnCadastrarSetor.Size = new System.Drawing.Size(160, 45);
-            this.btnCadastrarSetor.TabIndex = 73;
+            this.btnCadastrarSetor.TabIndex = 53;
             this.btnCadastrarSetor.Text = "Cadastrar Setor";
             this.btnCadastrarSetor.UseVisualStyleBackColor = true;
             this.btnCadastrarSetor.Click += new System.EventHandler(this.btnCadastrarSetor_Click);
             // 
             // btnCadastrarIgreja
             // 
-            this.btnCadastrarIgreja.Location = new System.Drawing.Point(675, 506);
+            this.btnCadastrarIgreja.Location = new System.Drawing.Point(508, 506);
             this.btnCadastrarIgreja.Name = "btnCadastrarIgreja";
             this.btnCadastrarIgreja.Size = new System.Drawing.Size(160, 45);
-            this.btnCadastrarIgreja.TabIndex = 74;
+            this.btnCadastrarIgreja.TabIndex = 54;
             this.btnCadastrarIgreja.Text = "Cadastrar Igreja";
             this.btnCadastrarIgreja.UseVisualStyleBackColor = true;
             this.btnCadastrarIgreja.Click += new System.EventHandler(this.btnCadastrarIgreja_Click);
@@ -926,7 +915,6 @@ namespace OrionWinForms
             this.Controls.Add(this.btnGerarFamilia);
             this.Controls.Add(this.btnPesquisarMembro);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnCaptureImagem);
             this.Controls.Add(this.gpDadosimportantes);
             this.Controls.Add(this.gbEndereco);
             this.Controls.Add(this.gbDadosIgreja);
@@ -1022,7 +1010,6 @@ namespace OrionWinForms
         private System.Windows.Forms.CheckBox isMemberCard;
         private System.Windows.Forms.GroupBox gpDadosimportantes;
         private System.Windows.Forms.CheckBox IsBatizedWithSpirit;
-        private System.Windows.Forms.Button btnCaptureImagem;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnPesquisarMembro;
         private System.Windows.Forms.Button btnGerarFamilia;

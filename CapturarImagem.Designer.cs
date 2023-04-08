@@ -52,6 +52,7 @@ namespace OrionWinForms
             this.pictureBoxImageCam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxImageCam.TabIndex = 0;
             this.pictureBoxImageCam.TabStop = false;
+            this.pictureBoxImageCam.Tag = "0";
             // 
             // pictureBoxImageCamCaptured
             // 
@@ -62,10 +63,12 @@ namespace OrionWinForms
             this.pictureBoxImageCamCaptured.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxImageCamCaptured.TabIndex = 1;
             this.pictureBoxImageCamCaptured.TabStop = false;
+            this.pictureBoxImageCamCaptured.Tag = "5";
             // 
             // comboBoxCameras
             // 
             this.comboBoxCameras.FormattingEnabled = true;
+            this.comboBoxCameras.ItemHeight = 20;
             this.comboBoxCameras.Location = new System.Drawing.Point(13, 404);
             this.comboBoxCameras.Name = "comboBoxCameras";
             this.comboBoxCameras.Size = new System.Drawing.Size(264, 28);
@@ -77,7 +80,7 @@ namespace OrionWinForms
             this.lblEscolherCam.Location = new System.Drawing.Point(12, 381);
             this.lblEscolherCam.Name = "lblEscolherCam";
             this.lblEscolherCam.Size = new System.Drawing.Size(135, 20);
-            this.lblEscolherCam.TabIndex = 3;
+            this.lblEscolherCam.TabIndex = 1;
             this.lblEscolherCam.Text = "Escolha a WebCam";
             // 
             // BtnIniciarCamera
@@ -85,7 +88,7 @@ namespace OrionWinForms
             this.BtnIniciarCamera.Location = new System.Drawing.Point(13, 438);
             this.BtnIniciarCamera.Name = "BtnIniciarCamera";
             this.BtnIniciarCamera.Size = new System.Drawing.Size(115, 29);
-            this.BtnIniciarCamera.TabIndex = 4;
+            this.BtnIniciarCamera.TabIndex = 3;
             this.BtnIniciarCamera.Text = "Start Cam";
             this.BtnIniciarCamera.UseVisualStyleBackColor = true;
             this.BtnIniciarCamera.Click += new System.EventHandler(this.BtnIniciarCamera_Click);
@@ -95,7 +98,7 @@ namespace OrionWinForms
             this.BtnStopCam.Location = new System.Drawing.Point(163, 438);
             this.BtnStopCam.Name = "BtnStopCam";
             this.BtnStopCam.Size = new System.Drawing.Size(114, 29);
-            this.BtnStopCam.TabIndex = 5;
+            this.BtnStopCam.TabIndex = 4;
             this.BtnStopCam.Text = "Stop Cam";
             this.BtnStopCam.UseVisualStyleBackColor = true;
             this.BtnStopCam.Click += new System.EventHandler(this.BtnStopCam_Click);
@@ -105,7 +108,7 @@ namespace OrionWinForms
             this.BtnCaptureImagem.Location = new System.Drawing.Point(399, 437);
             this.BtnCaptureImagem.Name = "BtnCaptureImagem";
             this.BtnCaptureImagem.Size = new System.Drawing.Size(149, 29);
-            this.BtnCaptureImagem.TabIndex = 6;
+            this.BtnCaptureImagem.TabIndex = 8;
             this.BtnCaptureImagem.Text = "Capturar Imagem";
             this.BtnCaptureImagem.UseVisualStyleBackColor = true;
             this.BtnCaptureImagem.Click += new System.EventHandler(this.BtnCaptureImagem_Click);
@@ -123,7 +126,7 @@ namespace OrionWinForms
             this.lblNomeDaImagem.Location = new System.Drawing.Point(283, 381);
             this.lblNomeDaImagem.Name = "lblNomeDaImagem";
             this.lblNomeDaImagem.Size = new System.Drawing.Size(130, 20);
-            this.lblNomeDaImagem.TabIndex = 8;
+            this.lblNomeDaImagem.TabIndex = 6;
             this.lblNomeDaImagem.Text = "Nome da Imagem";
             // 
             // label1

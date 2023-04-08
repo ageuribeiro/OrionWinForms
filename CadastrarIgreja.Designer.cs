@@ -138,7 +138,7 @@ namespace OrionWinForms
             this.lblCEP.Location = new System.Drawing.Point(12, 78);
             this.lblCEP.Name = "lblCEP";
             this.lblCEP.Size = new System.Drawing.Size(37, 20);
-            this.lblCEP.TabIndex = 10;
+            this.lblCEP.TabIndex = 12;
             this.lblCEP.Text = "CEP:";
             // 
             // txtCepIgreja
@@ -146,7 +146,7 @@ namespace OrionWinForms
             this.txtCepIgreja.Location = new System.Drawing.Point(12, 101);
             this.txtCepIgreja.Name = "txtCepIgreja";
             this.txtCepIgreja.Size = new System.Drawing.Size(150, 27);
-            this.txtCepIgreja.TabIndex = 11;
+            this.txtCepIgreja.TabIndex = 13;
             // 
             // lblPAstor
             // 
@@ -154,7 +154,7 @@ namespace OrionWinForms
             this.lblPAstor.Location = new System.Drawing.Point(168, 78);
             this.lblPAstor.Name = "lblPAstor";
             this.lblPAstor.Size = new System.Drawing.Size(49, 20);
-            this.lblPAstor.TabIndex = 12;
+            this.lblPAstor.TabIndex = 14;
             this.lblPAstor.Text = "Pastor";
             // 
             // txtPastorIgreja
@@ -162,7 +162,7 @@ namespace OrionWinForms
             this.txtPastorIgreja.Location = new System.Drawing.Point(168, 101);
             this.txtPastorIgreja.Name = "txtPastorIgreja";
             this.txtPastorIgreja.Size = new System.Drawing.Size(212, 27);
-            this.txtPastorIgreja.TabIndex = 13;
+            this.txtPastorIgreja.TabIndex = 15;
             // 
             // dataGridView1
             // 
@@ -179,7 +179,7 @@ namespace OrionWinForms
             this.btnCadastrar.Location = new System.Drawing.Point(1102, 99);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(94, 29);
-            this.btnCadastrar.TabIndex = 15;
+            this.btnCadastrar.TabIndex = 16;
             this.btnCadastrar.Text = "Inserir";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -190,7 +190,7 @@ namespace OrionWinForms
             this.lblPais.Location = new System.Drawing.Point(1006, 14);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(34, 20);
-            this.lblPais.TabIndex = 16;
+            this.lblPais.TabIndex = 10;
             this.lblPais.Text = "País";
             // 
             // txtPais
@@ -198,7 +198,7 @@ namespace OrionWinForms
             this.txtPais.Location = new System.Drawing.Point(1005, 36);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(151, 27);
-            this.txtPais.TabIndex = 17;
+            this.txtPais.TabIndex = 11;
             // 
             // CadastrarIgreja
             // 
