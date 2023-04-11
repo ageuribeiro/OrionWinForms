@@ -198,6 +198,7 @@ namespace OrionWinForms
             // 
             // dtpDataNascimento
             // 
+            this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataNascimento.Location = new System.Drawing.Point(823, 54);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(202, 27);
@@ -494,9 +495,9 @@ namespace OrionWinForms
             // cbxStatus
             // 
             this.cbxStatus.FormattingEnabled = true;
-            this.cbxStatus.Location = new System.Drawing.Point(517, 128);
+            this.cbxStatus.Location = new System.Drawing.Point(500, 128);
             this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(151, 28);
+            this.cbxStatus.Size = new System.Drawing.Size(168, 28);
             this.cbxStatus.TabIndex = 67;
             // 
             // lblStatus
@@ -510,15 +511,16 @@ namespace OrionWinForms
             // 
             // dtpDataBatismo
             // 
-            this.dtpDataBatismo.Location = new System.Drawing.Point(210, 129);
+            this.dtpDataBatismo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataBatismo.Location = new System.Drawing.Point(343, 129);
             this.dtpDataBatismo.Name = "dtpDataBatismo";
-            this.dtpDataBatismo.Size = new System.Drawing.Size(300, 27);
+            this.dtpDataBatismo.Size = new System.Drawing.Size(151, 27);
             this.dtpDataBatismo.TabIndex = 65;
             // 
             // lblDataDeBatismo
             // 
             this.lblDataDeBatismo.AutoSize = true;
-            this.lblDataDeBatismo.Location = new System.Drawing.Point(210, 105);
+            this.lblDataDeBatismo.Location = new System.Drawing.Point(343, 105);
             this.lblDataDeBatismo.Name = "lblDataDeBatismo";
             this.lblDataDeBatismo.Size = new System.Drawing.Size(120, 20);
             this.lblDataDeBatismo.TabIndex = 64;
@@ -538,7 +540,7 @@ namespace OrionWinForms
             this.cbxIgrejaDeBatismo.FormattingEnabled = true;
             this.cbxIgrejaDeBatismo.Location = new System.Drawing.Point(12, 128);
             this.cbxIgrejaDeBatismo.Name = "cbxIgrejaDeBatismo";
-            this.cbxIgrejaDeBatismo.Size = new System.Drawing.Size(192, 28);
+            this.cbxIgrejaDeBatismo.Size = new System.Drawing.Size(325, 28);
             this.cbxIgrejaDeBatismo.TabIndex = 63;
             // 
             // cbxFuncao
@@ -560,6 +562,7 @@ namespace OrionWinForms
             // 
             // dtpDataAdmissao
             // 
+            this.dtpDataAdmissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataAdmissao.Location = new System.Drawing.Point(856, 58);
             this.dtpDataAdmissao.Name = "dtpDataAdmissao";
             this.dtpDataAdmissao.Size = new System.Drawing.Size(145, 27);

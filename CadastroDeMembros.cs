@@ -1,12 +1,20 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.pdf;
-
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Kernel.Geom;
+using iText.Layout.Element;
+using iText.Kernel.Events;
+using iText.Kernel.Font;
+using iText.IO.Font.Constants;
+using iText.Layout.Properties;
+using iText.IO.Image;
+using iText.Kernel.Colors;
+using iText.Layout.Borders;
 
 namespace OrionWinForms
 {
@@ -869,81 +877,7 @@ namespace OrionWinForms
             cbxStatus.SelectedIndex = -1;
 
         }
-        private void GerarArquivoPdf() 
-        {
-            Document doc = new Document(PageSize.TABLOID);
-            doc.SetMargins(40, 40, 40, 80);
-            string nomeDoMembro = txtNome.Text;
-            string path = @"c:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + " Relatorio.pdf";
-
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
-            doc.Open();
-
-            //Salva a imagem
-            string Simg = @"C:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + ".jpg";
-            try
-            {
-                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Simg);
-                img.ScaleAbsolute(100, 130);
-                doc.Add(img);
-
-                doc.Close();
-                System.Diagnostics.Process.Start(path);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            Paragraph title = new Paragraph();
-            title.Font = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 28,(int)System.Drawing.FontStyle.Bold);
-            title.Alignment = Element.ALIGN_JUSTIFIED;
-            title.Add("CADASTRO DE MEMBRO\n\n");
-            doc.Add(title);
-
-            Paragraph param1 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
-            string c1 = "Nome: " + txtNome.Text + " " + txtSobrenome.Text + " Nome do Pai: " +txtNomePai.Text+" Nome da Mãe: "+txtNomeMae.Text + " Data de Nascimento: "+dtpDataNascimento.Text+" Cidade de Nascimento: "+ txtCidadeNascimento.Text+ " Estado de Nascimento: "+cbxUFNascimento.Text+" Nacionalidade: "+txtNacionalidade.Text;
-            param1.Add(c1);
-            doc.Add(param1);
-
-            Paragraph param2 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
-            string c2 = "Idade: " + txtIdade.Text + " RG: " + mskRG.Text + " CPF: " + mskCPF.Text + " Gênero: " + cbxGenero.Text + " Estado Civil: " + cbxEstadoCivil.Text + " Celular: " + mskCellFone.Text + " E-mail: " + mskEmail.Text + " Escolariade: " + cbxEscolaridade.Text + " Profissão: " + txtProfissao.Text;
-            param2.Add(c2);
-            doc.Add(param2);
-
-            Paragraph param3 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
-            string c3 = "Setor Atual: " + cbxSetorAtual.Text + " Congregação Atual: " + cbxCongregacaoAtual.Text + " Setor Anterior " + cbxSetorAnterior.Text + " Congregação Anterior " + cbxCongregacaoAnterior.Text + " Admitido na Igreja Por: " + cbxOpcaoAdmissao.Text + " Data da Admissão: " + dtpDataAdmissao.Text + " Função na Igreja: " + cbxFuncao.Text;
-            param3.Add(c3);
-            doc.Add(param3);
-
-            Paragraph param4 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
-            string c4 = "Congregação de Batismo: " + cbxIgrejaDeBatismo.Text + " Data do Batismo: " + dtpDataBatismo.Text + "Status: " + cbxStatus.Text + " Familia: " + cbxFamily.Text;
-            param4.Add(c4);
-            doc.Add(param4);
-
-            Paragraph param5 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
-            string c5 = "Logradouro: " + txtLogradouro.Text + " Número: " + txtNumAddress.Text + " Complemento: " + txtComplementoAddress.Text + " Bairro: " + txtNeighborhood.Text + " Cidade: " + txtCidadeAddress.Text + " Estado: " + cbxUFAddress.Text + " País: " + txtPaisaddress.Text + " CEP: " + mskCEPAddress.Text;
-            param5.Add(c5);
-            doc.Add(param5);
-
-            Paragraph param6 = new Paragraph("", new Font(iTextSharp.text.Font.NORMAL, 14));
-            string c6 = "Membro é batizado nas Aguas?" + IsBatizado.Checked + " Membro é Batizado com Espírito Santo? " +IsBatizedWithSpirit.Checked+ " Membro tem Cartão? " +isMemberCard.Checked;
-            param6.Add(c6);
-            doc.Add(param6);
-            //PdfPTable table = new PdfPTable(3);
-            //for(int i = 1; i <= 10; i++)
-            //{
-            //    table.AddCell("Linha " + i + ", Coluna 1");
-            //    table.AddCell("Linha " + i + ", Coluna 2");
-            //    table.AddCell("Linha " + i + ", Coluna 3");
-            //}
-
-            //doc.Add(table);
-
-
-            
-
-        }
+        
 
         private void CaptureImagem()
         {
@@ -973,5 +907,161 @@ namespace OrionWinForms
             frmCadastrarFamilia.ShowDialog();
         }
 
+        private void GerarArquivoPdf()
+        {
+            string nomeDoMembro = txtNome.Text;
+            string path = @"c:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + " Relatorio.pdf";
+
+            string nome = "Nome: " + txtNome.Text;
+            string sobrenome = "Sobrenome: " + txtSobrenome.Text;
+            string nomepai = "Nome do Pai: " + txtNomePai.Text;
+            string nomemae = "Nome da Mãe: " + txtNomeMae.Text;
+            string datanascimento = " Data de Nascimento: " + dtpDataNascimento.Text;
+            string cidadenascimento = " Cidade de Nascimento: " + txtCidadeNascimento.Text;
+            string estadonascimento = "Estado de Nascimento: " + cbxUFNascimento.Text;
+            string nacionalidade = " Nacionalidade: " + txtNacionalidade.Text;
+            string idade = "Idade: " + txtIdade.Text;
+            string rg = " RG: " + mskRG.Text;
+            string cpf = " CPF: " + mskCPF.Text;
+            string genero = " Gênero: " + cbxGenero.Text;
+            string estadocivil = " Estado Civil: " + cbxEstadoCivil.Text;
+            string celular = " Celular: " + mskCellFone.Text;
+            string email = " E-mail: " + mskEmail.Text;
+            string escolaridade = " Escolariade: " + cbxEscolaridade.Text;
+            string profissao = " Profissão: " + txtProfissao.Text;
+            string setoratual = "Setor Atual: " + cbxSetorAtual.Text;
+            string congregacaoatual = " Congregação Atual: " + cbxCongregacaoAtual.Text;
+            string setoranterior = " Setor Anterior " + cbxSetorAnterior.Text;
+            string congregacaoanterior = " Congregação Anterior " + cbxCongregacaoAnterior.Text;
+            string igrejaadmissao = " Admitido na Igreja Por: " + cbxOpcaoAdmissao.Text;
+            string datadaadmissao = " Data da Admissão: " + dtpDataAdmissao.Text;
+            string funcaonaigreja = " Função na Igreja: " + cbxFuncao.Text;
+            string congregacaodebatismo = "Congregação de Batismo: " + cbxIgrejaDeBatismo.Text;
+            string datadobatismo = " Data do Batismo: " + dtpDataBatismo.Text;
+            string status = "Status: " + cbxStatus.Text;
+            string familia = " Familia: " + cbxFamily.Text;
+            string logradouro = "Logradouro: " + txtLogradouro.Text;
+            string numero = " Número: " + txtNumAddress.Text;
+            string complemento = " Complemento: " + txtComplementoAddress.Text;
+            string bairro = " Bairro: " + txtNeighborhood.Text;
+            string cidade = " Cidade: " + txtCidadeAddress.Text;
+            string estado = " Estado: " + cbxUFAddress.Text;
+            string pais = " País: " + txtPaisaddress.Text;
+            string cep = " CEP: " + mskCEPAddress.Text;
+            string isbaptized = "Membro é batizado nas Aguas?" + IsBatizado.Checked;
+            string isbaptizedWithSpirited = " Membro é Batizado com Espírito Santo? " + IsBatizedWithSpirit.Checked;
+            string ismemberCard = " Membro tem Cartão? " + isMemberCard.Checked;
+
+
+            using (PdfWriter wPdf = new PdfWriter(path, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
+            {
+                var pdfDocument = new PdfDocument(wPdf);
+                
+                var document = new Document(pdfDocument, PageSize.A5.Rotate());
+
+                document.SetFontSize(8);
+                document.SetMargins(20, 20, 20, 20);
+                document.SetCharacterSpacing((float)0.5);
+
+                var helvetica_bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+                var p1 = new Paragraph("\n");
+                p1.SetFont(helvetica_bold);
+                p1.SetFontSize(14);
+                p1.SetTextAlignment(TextAlignment.CENTER);
+                p1.SetFontColor(ColorConstants.BLACK);
+                p1.Add("Recadastramento do Rol de Membros");
+                document.Add(p1);
+
+                //table
+                var table1 = new Table(new float[] { 100, 400 });
+                table1.SetWidth(UnitValue.CreatePercentValue(100));
+
+                //logotipo na primeira coluna da tabela
+                var imgLogo = @"C:\AppOrion\Dados\Logo\brasao_ad.png";
+                Image imgL = new Image(iText.IO.Image.ImageDataFactory.Create(imgLogo));
+                imgL.ScaleAbsolute(150, 62);
+                
+                var imageCell = new Cell().Add(imgL);
+                imageCell.SetBorder(Border.NO_BORDER);
+                table1.AddCell(imageCell);
+
+                // texto na segunda coluna da tabela
+                var helvetica = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+                var p2 = new Paragraph();
+                p2.SetFont(helvetica);
+                p2.SetFontSize(10);
+                p2.SetTextAlignment(TextAlignment.LEFT);
+                var italicFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_OBLIQUE);
+                p2.SetFont(italicFont);
+                p2.Add("IGREJA EVANGÉLICA ASSEMBLÉIA DE DEUS\nRua Conselheiro Cotegipe, 273 - Belém - São Paulo");
+                var textCell = new Cell().Add(p2);
+                textCell.SetBorder(Border.NO_BORDER);
+                table1.AddCell(textCell);
+
+                //remover a borda
+                table1.SetBorder(Border.NO_BORDER);
+
+                document.Add(table1);
+
+                Table table2 = new Table(4).UseAllAvailableWidth();
+
+                // Adicionando os dados à tabela
+                var imgProfile = @"C:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + ".jpg";
+                Image img = new Image(iText.IO.Image.ImageDataFactory.Create(imgProfile));
+                img.SetFixedPosition(470, 300);
+                img.ScaleToFit(100, 134);
+                document.Add(img);
+
+                table2.AddCell("Membro: " + txtNome.Text + " " + txtSobrenome.Text);
+                table2.AddCell("Pai: " + txtNomePai.Text);
+                table2.AddCell("Mãe: " + txtNomeMae.Text);
+                table2.AddCell("Data de Nasc: " + dtpDataNascimento.Text);
+                table2.AddCell("Cidade de Nasc: " + txtCidadeNascimento.Text + " - " + cbxUFNascimento.Text);
+                table2.AddCell("Nacionalidade: " + txtNacionalidade.Text);
+
+                table2.AddCell("Idade: " + txtIdade.Text);
+                table2.AddCell("RG: " + mskRG.Text);
+                table2.AddCell("CPF: " + mskCPF.Text);
+                table2.AddCell("Gênero: " + cbxGenero.Text);
+                table2.AddCell("Estado Civil: " + cbxEstadoCivil.Text);
+                
+                table2.AddCell("Cel: " + mskCellFone.Text);
+                table2.AddCell("E-mail: " + mskEmail.Text);
+                table2.AddCell("Escolaridade: " + cbxEscolaridade.Text);
+                table2.AddCell("Profissão: " + txtProfissao.Text);
+                table2.AddCell("Setor Atual: " + cbxSetorAtual.Text);
+                
+                table2.AddCell("Igreja Atual: " + cbxCongregacaoAtual.Text);
+                table2.AddCell("Setor Anterior: " + cbxSetorAnterior.Text);
+                table2.AddCell("Igreja Anterior: " + cbxCongregacaoAnterior.Text);
+                table2.AddCell("Admitido por: " + cbxOpcaoAdmissao.Text);
+                table2.AddCell("Admitido em: " + dtpDataAdmissao.Text);
+                
+                table2.AddCell("Função: " + cbxFuncao.Text);
+                table2.AddCell("Igreja de Batismo: "+ cbxIgrejaDeBatismo.Text);
+                table2.AddCell("Data do Batismo: "+ dtpDataBatismo.Text);
+                table2.AddCell("Status: "+ cbxStatus.Text);
+                table2.AddCell("Endereço: "+ txtLogradouro.Text+ ", " + txtNumAddress.Text + " - " + txtComplementoAddress.Text + " - " + mskCEPAddress.Text);
+
+                table2.AddCell("Bairro: " + txtNeighborhood.Text + " " + " - " + txtCidadeAddress.Text + "/" + cbxUFAddress.Text + " - " + txtPaisaddress.Text);
+
+                table2.AddCell("Batizado: " + IsBatizado.Checked.ToString());
+                table2.AddCell("Batizado com Espírito Santo: " + IsBatizedWithSpirit.Checked.ToString());
+                table2.AddCell("Tem Cartão: " + isMemberCard.Checked.ToString());
+
+                document.Add(table2);
+                //conteudo do relatório
+
+                document.Add(new Paragraph("\n"));
+                document.Add(img);
+
+
+
+                document.Close();
+                pdfDocument.Close();
+
+                MessageBox.Show("Arquivo PDF gerado em "+path);
+            }
+        }
     }
 }
