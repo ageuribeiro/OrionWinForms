@@ -73,7 +73,7 @@ namespace OrionWinForms
                 }
                    
 
-                MessageBox.Show("Captura executada com sucesso!");
+                MessageBox.Show("Captura executada com sucesso!", "Captura de Imagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception ex)
             {

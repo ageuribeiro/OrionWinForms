@@ -111,67 +111,64 @@ namespace OrionWinForms
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-                string connectionString = @"Data Source=ASUSX512FJC\SQLSERVER;Initial Catalog=AppConnectedChurchDatabase;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
+            string connectionString = @"Data Source=ASUSX512FJC\SQLSERVER;Initial Catalog=AppConnectedChurchDatabase;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string RG = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value);
+                string CPF = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+
+                DialogResult result = MessageBox.Show("Você tem certeza que deseja excluir o registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    string RG = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value);
-                    string CPF = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+                    //Excluir a linha correspondente da tabela "Address" no banco de dados
+                    string sqlAddress = "DELETE FROM Address WHERE MembroRG = @RG AND MembroCPF = @CPF";
+                    SqlCommand commandAddress = new SqlCommand(sqlAddress, connection);
+                    commandAddress.Parameters.AddWithValue("@RG", RG);
+                    commandAddress.Parameters.AddWithValue("@CPF", CPF);
+                    connection.Open();
+                    int rowsDeletedAddress = commandAddress.ExecuteNonQuery();
+                    connection.Close();
 
-                    DialogResult result = MessageBox.Show("Você tem certeza que deseja excluir o registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    //Excluir a linha correspondente da tabela "Contact" no banco de dados
+                    string sqlContact = "DELETE FROM Contact WHERE MembroRG = @RG AND MembroCPF = @CPF";
+                    SqlCommand commandContact = new SqlCommand(sqlContact, connection);
+                    commandContact.Parameters.AddWithValue("@RG", RG);
+                    commandContact.Parameters.AddWithValue("@CPF", CPF);
+                    connection.Open();
+                    int rowsDeletedContacts = commandContact.ExecuteNonQuery();
+                    connection.Close();
+
+                    //Excluir a linha correspondente da tabela "Contact" no banco de dados
+                    string sqlProfessionalInfo = "DELETE FROM ProfessionalInfo WHERE MembroRG = @RG AND MembroCPF = @CPF";
+                    SqlCommand commandProfessionalInfo = new SqlCommand(sqlProfessionalInfo, connection);
+                    commandProfessionalInfo.Parameters.AddWithValue("@RG", RG);
+                    commandProfessionalInfo.Parameters.AddWithValue("@CPF", CPF);
+                    connection.Open();
+                    int rowsDeletedProfessionalInfo = commandProfessionalInfo.ExecuteNonQuery();
+                    connection.Close();
+
+                    //Excluir a linha correspondete da tabela "Members" do banco de dados
+                    string sqlMembers = "DELETE FROM Members WHERE RG = @RG AND CPF = @CPF";
+                    SqlCommand commandMembers = new SqlCommand(sqlMembers, connection);
+                    commandMembers.Parameters.AddWithValue("@RG", RG);
+                    commandMembers.Parameters.AddWithValue("@CPF", CPF);
+                    connection.Open();
+                    int rowsDeletedMembers = commandMembers.ExecuteNonQuery();
+                    connection.Close();
+
+                    //Verifica se alguma linha foi excluida nas tabelas
+                    if(rowsDeletedAddress > 0 || rowsDeletedContacts > 0 || rowsDeletedProfessionalInfo > 0 || rowsDeletedMembers > 0)
                     {
-                        //Excluir a linha correspondente da tabela "Address" no banco de dados
-                        string sqlAddress = "DELETE FROM Address WHERE MembroRG = @RG AND MembroCPF = @CPF";
-                        SqlCommand commandAddress = new SqlCommand(sqlAddress, connection);
-                        commandAddress.Parameters.AddWithValue("@RG", RG);
-                        commandAddress.Parameters.AddWithValue("@CPF", CPF);
-                        connection.Open();
-                        int rowsDeletedAddress = commandAddress.ExecuteNonQuery();
-                        connection.Close();
-
-                        //Excluir a linha correspondente da tabela "Contact" no banco de dados
-                        string sqlContact = "DELETE FROM Contact WHERE MembroRG = @RG AND MembroCPF = @CPF";
-                        SqlCommand commandContact = new SqlCommand(sqlContact, connection);
-                        commandContact.Parameters.AddWithValue("@RG", RG);
-                        commandContact.Parameters.AddWithValue("@CPF", CPF);
-                        connection.Open();
-                        int rowsDeletedContacts = commandContact.ExecuteNonQuery();
-                        connection.Close();
-
-                        //Excluir a linha correspondente da tabela "Contact" no banco de dados
-                        string sqlProfessionalInfo = "DELETE FROM ProfessionalInfo WHERE MembroRG = @RG AND MembroCPF = @CPF";
-                        SqlCommand commandProfessionalInfo = new SqlCommand(sqlProfessionalInfo, connection);
-                        commandProfessionalInfo.Parameters.AddWithValue("@RG", RG);
-                        commandProfessionalInfo.Parameters.AddWithValue("@CPF", CPF);
-                        connection.Open();
-                        int rowsDeletedProfessionalInfo = commandProfessionalInfo.ExecuteNonQuery();
-                        connection.Close();
-
-                        //Excluir a linha correspondete da tabela "Members" do banco de dados
-                        string sqlMembers = "DELETE FROM Members WHERE RG = @RG AND CPF = @CPF";
-                        SqlCommand commandMembers = new SqlCommand(sqlMembers, connection);
-                        commandMembers.Parameters.AddWithValue("@RG", RG);
-                        commandMembers.Parameters.AddWithValue("@CPF", CPF);
-                        connection.Open();
-                        int rowsDeletedMembers = commandMembers.ExecuteNonQuery();
-                        connection.Close();
-
-                        //Verifica se alguma linha foi excluida nas tabelas
-                        if(rowsDeletedAddress > 0 || rowsDeletedContacts > 0 || rowsDeletedProfessionalInfo > 0 || rowsDeletedMembers > 0)
+                        DataGridViewRow row = dataGridView1.CurrentRow;
+                        if (row != null)
                         {
-                            DataGridViewRow row = dataGridView1.CurrentRow;
-                            if (row != null)
-                            {
-                                dataGridView1.Rows.Remove(row);
-                            }
+                            dataGridView1.Rows.Remove(row);
                         }
-
                     }
+
                 }
+            }
         
         }
-
-
- 
     }
 }

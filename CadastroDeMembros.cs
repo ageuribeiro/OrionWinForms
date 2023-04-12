@@ -469,245 +469,245 @@ namespace OrionWinForms
         {
             if (txtNome.Text == "")
             {
-                MessageBox.Show("Informe o Nome do Membro");
+                MessageBox.Show("Informe o Nome do Membro","Informação Inválida",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 txtNome.Focus();
                 return false;
             }
 
             else if (txtSobrenome.Text == "")
             {
-                MessageBox.Show("Informe o Sobrenome do Membro");
+                MessageBox.Show("Informe o Sobrenome do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSobrenome.Focus();
                 return false;
             }
 
             else if (txtNomePai.Text == "")
             {
-                MessageBox.Show("Informe o Nome do Pai do Membro");
+                MessageBox.Show("Informe o Nome do Pai do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNomePai.Focus();
                 return false;
             }
 
             else if (txtNomeMae.Text == "")
             {
-                MessageBox.Show("Informe o Nome da Mãe do Membro");
+                MessageBox.Show("Informe o Nome da Mãe do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNomeMae.Focus();
                 return false;
             }
 
             else if (this.dtpDataNascimento.Value == DateTime.Now.Date)
             {
-                MessageBox.Show("Informe a Data de Nascimento do Membro");
+                MessageBox.Show("Informe a Data de Nascimento do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpDataNascimento.Focus();
                 return false;
             }
 
             else if (txtCidadeNascimento.Text == "")
             {
-                MessageBox.Show("Informe a Cidade de Nascimento do Membro");
+                MessageBox.Show("Informe a Cidade de Nascimento do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCidadeNascimento.Focus();
                 return false;
             }
 
             else if (txtNacionalidade.Text == "")
             {
-                MessageBox.Show("Informe a Nacionalidade do Membro");
+                MessageBox.Show("Informe a Nacionalidade do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNacionalidade.Focus();
                 return false;
             }
 
             else if (txtIdade.Text == "")
             {
-                MessageBox.Show("Informe a Idade do Membro");
+                MessageBox.Show("Informe a Idade do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtIdade.Focus();
                 return false;
             }
 
             else if (mskRG.Text == "" || mskRG.Text == "00,000,000-0" || mskRG.Text == "  .   .   -")
             {
-                MessageBox.Show("Informe o número do RG do Membro");
+                MessageBox.Show("Informe o número do RG do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mskRG.Focus();
                 return false;
             }
 
             else if (mskCPF.Text == "" || mskCPF.Text == "000,000,000-00" || mskCPF.Text == "   .   .   -")
             {
-                MessageBox.Show("Informe o número do CPF do Membro");
+                MessageBox.Show("Informe o número do CPF do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mskCPF.Focus();
                 return false;
             }
 
             else if (cbxGenero.Text == "")
             {
-                MessageBox.Show("Escolha o Gênero do Membro");
+                MessageBox.Show("Escolha o Gênero do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxGenero.Focus();
                 return false;
             }
 
             else if (cbxEstadoCivil.Text == "")
             {
-                MessageBox.Show("Escolha o Estado Civil do Membro");
+                MessageBox.Show("Escolha o Estado Civil do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxEstadoCivil.Focus();
                 return false;
             }
 
             else if (mskCellFone.Text == "" || mskCellFone.Text == "(99) 00000-0000" || mskCellFone.Text == "(  )      -")
             {
-                MessageBox.Show("Informe o número de Telefone do Membro");
+                MessageBox.Show("Informe o número de Telefone do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mskCellFone.Focus();
                 return false;
             }
 
             else if (mskEmail.Text == "")
             {
-                MessageBox.Show("Informe o Email do Membro");
+                MessageBox.Show("Informe o Email do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mskEmail.Focus();
                 return false;
             }
 
             else if (cbxEscolaridade.Text == "")
             {
-                MessageBox.Show("Escolha a Escolaridade do Membro");
+                MessageBox.Show("Escolha a Escolaridade do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxEscolaridade.Focus();
                 return false;
             }
 
             else if (txtProfissao.Text == "")
             {
-                MessageBox.Show("Informe a profissão do Membro");
+                MessageBox.Show("Informe a profissão do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtProfissao.Focus();
                 return false;
             }
 
             else if (txtLogradouro.Text == "")
             {
-                MessageBox.Show("Informe o Endereço do Membro");
+                MessageBox.Show("Informe o Endereço do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtLogradouro.Focus();
                 return false;
             }
 
             else if (txtNumAddress.Text == "")
             {
-                MessageBox.Show("Informe o Número de Residência do Membro");
+                MessageBox.Show("Informe o Número de Residência do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNumAddress.Focus();
                 return false;
             }
 
             else if (txtComplementoAddress.Text == "")
             {
-                MessageBox.Show("Informe o Complemento da Residência do Membro");
+                MessageBox.Show("Informe o Complemento da Residência do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtComplementoAddress.Focus();
                 return false;
             }
 
             else if(txtNeighborhood.Text == "")
             {
-                MessageBox.Show("Informe o Bairro Residencial do Membro");
+                MessageBox.Show("Informe o Bairro Residencial do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNeighborhood.Focus();
                 return false;
             }
 
             else if (txtCidadeAddress.Text == "")
             {
-                MessageBox.Show("Informe a Cidade da Residência do Membro");
+                MessageBox.Show("Informe a Cidade da Residência do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCidadeAddress.Focus();
                 return false;
             }
 
             else if (cbxUFAddress.Text == "")
             {
-                MessageBox.Show("Informe o Estado da Residência do Membro");
+                MessageBox.Show("Informe o Estado da Residência do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxUFAddress.Focus();
                 return false;
             }
 
             else if (txtPaisaddress.Text == "")
             {
-                MessageBox.Show("Informe o País da Residência do Membro");
+                MessageBox.Show("Informe o País da Residência do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPaisaddress.Focus();
                 return false;
             }
 
-            else if (mskCEPAddress.Text == "" || mskCEPAddress.Text == "00000-000" || mskCEPAddress.Text == "     -")
+            else if (mskCEPAddress.Text == "" || mskCEPAddress.Text == "00000-000" || mskCEPAddress.Text == "-")
             {
-                MessageBox.Show("Informe o CEP da Residência do Membro");
+                MessageBox.Show("Informe o CEP da Residência do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mskCEPAddress.Focus();
                 return false;
             }
 
             else if (cbxSetorAtual.Text == "")
             {
-                MessageBox.Show("Informe o Setor Atual do Membro");
+                MessageBox.Show("Informe o Setor Atual do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxSetorAtual.Focus();
                 return false;
             }
 
             else if (cbxSetorAnterior.Text == "")
             {
-                MessageBox.Show("Informe o Setor Anterior do Membro");
+                MessageBox.Show("Informe o Setor Anterior do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxSetorAnterior.Focus();
                 return false;
             }
 
             else if (cbxCongregacaoAtual.Text == "")
             {
-                MessageBox.Show("Informe a Congregação Atual do Membro");
+                MessageBox.Show("Informe a Congregação Atual do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxCongregacaoAtual.Focus();
                 return false;
             }
 
             else if (cbxCongregacaoAnterior.Text == "")
             {
-                MessageBox.Show("Informe a Congregação Anterior do Membro");
+                MessageBox.Show("Informe a Congregação Anterior do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxCongregacaoAnterior.Focus();
                 return false;
             }
 
             else if (cbxOpcaoAdmissao.Text == "")
             {
-                MessageBox.Show("Informe o opção de Admissão do Membro");
+                MessageBox.Show("Informe o opção de Admissão do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxOpcaoAdmissao.Focus();
                 return false;
             }
 
             else if (this.dtpDataAdmissao.Value == DateTime.Now.Date)
             {
-                MessageBox.Show("Informe a Data de Admissão do Membro");
+                MessageBox.Show("Informe a Data de Admissão do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpDataAdmissao.Focus();
                 return false;
             }
 
             else if (this.dtpDataBatismo.Value == DateTime.Now.Date)
             {
-                MessageBox.Show("Informe a Data de Batismo do Membro");
+                MessageBox.Show("Informe a Data de Batismo do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpDataBatismo.Focus();
                 return false;
             }
 
             else if (cbxFuncao.Text == "")
             {
-                MessageBox.Show("Informe a Função Atual do Membro");
+                MessageBox.Show("Informe a Função Atual do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxFuncao.Focus();
                 return false;
             }
 
             else if (cbxIgrejaDeBatismo.Text == "")
             {
-                MessageBox.Show("Informe a Congregação de Batismo do Membro");
+                MessageBox.Show("Informe a Congregação de Batismo do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxIgrejaDeBatismo.Focus();
                 return false;
             }
 
             else if (cbxFamily.Text == "")
             {
-                MessageBox.Show("Informe a Familia do Membro");
+                MessageBox.Show("Informe a Familia do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxFamily.Focus();
                 return false;
             }
 
             else if(cbxStatus.Text == "")
             {
-                MessageBox.Show("Informe o Status atual do Membro");
+                MessageBox.Show("Informe o Status atual do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxStatus.Focus();
                 return false;
             }
@@ -719,7 +719,7 @@ namespace OrionWinForms
             string nomeDoMembro = txtNome.Text;
             //Criar diretorio 
             Directory.CreateDirectory(@"c:\AppOrion\Dados\Membros\" + nomeDoMembro);
-            MessageBox.Show("Pasta criada com sucesso!");
+            MessageBox.Show("Pasta criada com sucesso!", "Gerenciador de Diretório", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void RegistrarnoBancoSQL()
         {
@@ -912,47 +912,6 @@ namespace OrionWinForms
             string nomeDoMembro = txtNome.Text;
             string path = @"c:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + " Relatorio.pdf";
 
-            string nome = "Nome: " + txtNome.Text;
-            string sobrenome = "Sobrenome: " + txtSobrenome.Text;
-            string nomepai = "Nome do Pai: " + txtNomePai.Text;
-            string nomemae = "Nome da Mãe: " + txtNomeMae.Text;
-            string datanascimento = " Data de Nascimento: " + dtpDataNascimento.Text;
-            string cidadenascimento = " Cidade de Nascimento: " + txtCidadeNascimento.Text;
-            string estadonascimento = "Estado de Nascimento: " + cbxUFNascimento.Text;
-            string nacionalidade = " Nacionalidade: " + txtNacionalidade.Text;
-            string idade = "Idade: " + txtIdade.Text;
-            string rg = " RG: " + mskRG.Text;
-            string cpf = " CPF: " + mskCPF.Text;
-            string genero = " Gênero: " + cbxGenero.Text;
-            string estadocivil = " Estado Civil: " + cbxEstadoCivil.Text;
-            string celular = " Celular: " + mskCellFone.Text;
-            string email = " E-mail: " + mskEmail.Text;
-            string escolaridade = " Escolariade: " + cbxEscolaridade.Text;
-            string profissao = " Profissão: " + txtProfissao.Text;
-            string setoratual = "Setor Atual: " + cbxSetorAtual.Text;
-            string congregacaoatual = " Congregação Atual: " + cbxCongregacaoAtual.Text;
-            string setoranterior = " Setor Anterior " + cbxSetorAnterior.Text;
-            string congregacaoanterior = " Congregação Anterior " + cbxCongregacaoAnterior.Text;
-            string igrejaadmissao = " Admitido na Igreja Por: " + cbxOpcaoAdmissao.Text;
-            string datadaadmissao = " Data da Admissão: " + dtpDataAdmissao.Text;
-            string funcaonaigreja = " Função na Igreja: " + cbxFuncao.Text;
-            string congregacaodebatismo = "Congregação de Batismo: " + cbxIgrejaDeBatismo.Text;
-            string datadobatismo = " Data do Batismo: " + dtpDataBatismo.Text;
-            string status = "Status: " + cbxStatus.Text;
-            string familia = " Familia: " + cbxFamily.Text;
-            string logradouro = "Logradouro: " + txtLogradouro.Text;
-            string numero = " Número: " + txtNumAddress.Text;
-            string complemento = " Complemento: " + txtComplementoAddress.Text;
-            string bairro = " Bairro: " + txtNeighborhood.Text;
-            string cidade = " Cidade: " + txtCidadeAddress.Text;
-            string estado = " Estado: " + cbxUFAddress.Text;
-            string pais = " País: " + txtPaisaddress.Text;
-            string cep = " CEP: " + mskCEPAddress.Text;
-            string isbaptized = "Membro é batizado nas Aguas?" + IsBatizado.Checked;
-            string isbaptizedWithSpirited = " Membro é Batizado com Espírito Santo? " + IsBatizedWithSpirit.Checked;
-            string ismemberCard = " Membro tem Cartão? " + isMemberCard.Checked;
-
-
             using (PdfWriter wPdf = new PdfWriter(path, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {
                 var pdfDocument = new PdfDocument(wPdf);
@@ -973,14 +932,13 @@ namespace OrionWinForms
                 document.Add(p1);
 
                 //table
-                var table1 = new Table(new float[] { 100, 400 });
+                var table1 = new Table(new float[] { 100, 400, 100 });
                 table1.SetWidth(UnitValue.CreatePercentValue(100));
 
                 //logotipo na primeira coluna da tabela
                 var imgLogo = @"C:\AppOrion\Dados\Logo\brasao_ad.png";
                 Image imgL = new Image(iText.IO.Image.ImageDataFactory.Create(imgLogo));
-                imgL.ScaleAbsolute(150, 62);
-                
+                imgL.ScaleToFit(100, 134);
                 var imageCell = new Cell().Add(imgL);
                 imageCell.SetBorder(Border.NO_BORDER);
                 table1.AddCell(imageCell);
@@ -990,69 +948,68 @@ namespace OrionWinForms
                 var p2 = new Paragraph();
                 p2.SetFont(helvetica);
                 p2.SetFontSize(10);
-                p2.SetTextAlignment(TextAlignment.LEFT);
+                p2.SetTextAlignment(TextAlignment.CENTER);
                 var italicFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_OBLIQUE);
+                var boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
                 p2.SetFont(italicFont);
+                p2.SetFont(boldFont);
                 p2.Add("IGREJA EVANGÉLICA ASSEMBLÉIA DE DEUS\nRua Conselheiro Cotegipe, 273 - Belém - São Paulo");
                 var textCell = new Cell().Add(p2);
                 textCell.SetBorder(Border.NO_BORDER);
                 table1.AddCell(textCell);
 
-                //remover a borda
-                table1.SetBorder(Border.NO_BORDER);
-
-                document.Add(table1);
-
-                Table table2 = new Table(4).UseAllAvailableWidth();
-
-                // Adicionando os dados à tabela
+                // imagem profile
                 var imgProfile = @"C:\AppOrion\Dados\Membros\" + nomeDoMembro + "\\" + nomeDoMembro + ".jpg";
                 Image img = new Image(iText.IO.Image.ImageDataFactory.Create(imgProfile));
                 img.SetFixedPosition(470, 300);
                 img.ScaleToFit(100, 134);
-                document.Add(img);
-
-                table2.AddCell("Membro: " + txtNome.Text + " " + txtSobrenome.Text);
-                table2.AddCell("Pai: " + txtNomePai.Text);
-                table2.AddCell("Mãe: " + txtNomeMae.Text);
-                table2.AddCell("Data de Nasc: " + dtpDataNascimento.Text);
-                table2.AddCell("Cidade de Nasc: " + txtCidadeNascimento.Text + " - " + cbxUFNascimento.Text);
-                table2.AddCell("Nacionalidade: " + txtNacionalidade.Text);
-
-                table2.AddCell("Idade: " + txtIdade.Text);
-                table2.AddCell("RG: " + mskRG.Text);
-                table2.AddCell("CPF: " + mskCPF.Text);
-                table2.AddCell("Gênero: " + cbxGenero.Text);
-                table2.AddCell("Estado Civil: " + cbxEstadoCivil.Text);
+                var imgPCell = new Cell().Add(img);
+                imgPCell.SetBorder(Border.NO_BORDER);
+                table1.AddCell(imgPCell);
                 
-                table2.AddCell("Cel: " + mskCellFone.Text);
-                table2.AddCell("E-mail: " + mskEmail.Text);
-                table2.AddCell("Escolaridade: " + cbxEscolaridade.Text);
-                table2.AddCell("Profissão: " + txtProfissao.Text);
-                table2.AddCell("Setor Atual: " + cbxSetorAtual.Text);
+                //remover a borda
+                table1.SetBorder(Border.NO_BORDER);
+                document.Add(table1);
+
+                var EmptyParagraph = new Paragraph("\n\n");
+                document.Add(EmptyParagraph);
+
+
+                Table table2 = new Table(new float[] { 200, 200, 200 });
                 
-                table2.AddCell("Igreja Atual: " + cbxCongregacaoAtual.Text);
-                table2.AddCell("Setor Anterior: " + cbxSetorAnterior.Text);
-                table2.AddCell("Igreja Anterior: " + cbxCongregacaoAnterior.Text);
-                table2.AddCell("Admitido por: " + cbxOpcaoAdmissao.Text);
-                table2.AddCell("Admitido em: " + dtpDataAdmissao.Text);
-                
-                table2.AddCell("Função: " + cbxFuncao.Text);
-                table2.AddCell("Igreja de Batismo: "+ cbxIgrejaDeBatismo.Text);
-                table2.AddCell("Data do Batismo: "+ dtpDataBatismo.Text);
-                table2.AddCell("Status: "+ cbxStatus.Text);
-                table2.AddCell("Endereço: "+ txtLogradouro.Text+ ", " + txtNumAddress.Text + " - " + txtComplementoAddress.Text + " - " + mskCEPAddress.Text);
-
-                table2.AddCell("Bairro: " + txtNeighborhood.Text + " " + " - " + txtCidadeAddress.Text + "/" + cbxUFAddress.Text + " - " + txtPaisaddress.Text);
-
-                table2.AddCell("Batizado: " + IsBatizado.Checked.ToString());
-                table2.AddCell("Batizado com Espírito Santo: " + IsBatizedWithSpirit.Checked.ToString());
-                table2.AddCell("Tem Cartão: " + isMemberCard.Checked.ToString());
-
+                table2.AddCell(new Cell().Add(new Paragraph("Membro: " + txtNome.Text + " " + txtSobrenome.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Pai: " + txtNomePai.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Mãe: " + txtNomeMae.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Data de Nasc: " + dtpDataNascimento.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Cidade de Nasc: " + txtCidadeNascimento.Text + " - " + cbxUFNascimento.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Nacionalidade: " + txtNacionalidade.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Idade: " + txtIdade.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("RG: " + mskRG.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("CPF: " + mskCPF.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Gênero: " + cbxGenero.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Estado Civil: " + cbxEstadoCivil.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Cel: " + mskCellFone.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("E-mail: " + mskEmail.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Escolaridade: " + cbxEscolaridade.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Profissão: " + txtProfissao.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Setor Atual: " + cbxSetorAtual.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Igreja Atual: " + cbxCongregacaoAtual.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Setor Anterior: " + cbxSetorAnterior.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Igreja Anterior: " + cbxCongregacaoAnterior.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Admitido por: " + cbxOpcaoAdmissao.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Admitido em: " + dtpDataAdmissao.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Igreja de Batismo: " + cbxIgrejaDeBatismo.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Data do Batismo: " + dtpDataBatismo.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Status: " + cbxStatus.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Endereço: " + txtLogradouro.Text + ", " + txtNumAddress.Text + " - " + txtComplementoAddress.Text + " - " + mskCEPAddress.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Bairro: " + txtNeighborhood.Text + " " + " - " + txtCidadeAddress.Text + "/" + cbxUFAddress.Text + " - " + txtPaisaddress.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Batizado: " + IsBatizado.Checked.ToString()).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Batizado com Espírito Santo: " + IsBatizedWithSpirit.Checked.ToString()).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
+                table2.AddCell(new Cell().Add(new Paragraph("Tem Cartão: " + isMemberCard.Checked.ToString()).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
                 document.Add(table2);
                 //conteudo do relatório
 
-                document.Add(new Paragraph("\n"));
+                document.Add(new Paragraph("\n\n"));
                 document.Add(img);
 
 
@@ -1060,7 +1017,7 @@ namespace OrionWinForms
                 document.Close();
                 pdfDocument.Close();
 
-                MessageBox.Show("Arquivo PDF gerado em "+path);
+                MessageBox.Show("Arquivo PDF gerado em "+path, "Relatório PDF.",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

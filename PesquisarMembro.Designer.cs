@@ -35,7 +35,6 @@ namespace OrionWinForms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
-            this.btnRelatorios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,21 +107,11 @@ namespace OrionWinForms
             this.btnDeletar.UseVisualStyleBackColor = true;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
-            // btnRelatorios
-            // 
-            this.btnRelatorios.Location = new System.Drawing.Point(901, 153);
-            this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(132, 42);
-            this.btnRelatorios.TabIndex = 5;
-            this.btnRelatorios.Text = "Imprimir";
-            this.btnRelatorios.UseVisualStyleBackColor = true;
-            // 
             // PesquisarMembro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 453);
-            this.Controls.Add(this.btnRelatorios);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.dataGridView1);
@@ -147,6 +136,5 @@ namespace OrionWinForms
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnDeletar;
-        private System.Windows.Forms.Button btnRelatorios;
     }
 }
