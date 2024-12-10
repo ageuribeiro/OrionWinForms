@@ -1,20 +1,17 @@
-﻿using System.Diagnostics;
+﻿using iText.IO.Font.Constants;
+using iText.Kernel.Colors;
+using iText.Kernel.Font;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Borders;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Kernel.Geom;
-using iText.Layout.Element;
-using iText.Kernel.Events;
-using iText.Kernel.Font;
-using iText.IO.Font.Constants;
-using iText.Layout.Properties;
-using iText.IO.Image;
-using iText.Kernel.Colors;
-using iText.Layout.Borders;
 
 namespace OrionWinForms
 {
@@ -33,6 +30,12 @@ namespace OrionWinForms
             dtpDataNascimento.Value = DateTime.Now.Date;
             dtpDataAdmissao.Value = DateTime.Now.Date;
             dtpDataBatismo.Value = DateTime.Now.Date;
+            LoadData();
+            
+        }
+
+        private void LoadData()
+        {
             CarregarUFNascimento();
             CarregarUFAddress();
             CarregarGenero();
@@ -50,8 +53,8 @@ namespace OrionWinForms
         }
         private void CarregarUFNascimento()
         {
-        
-            using (SqlConnection conexao = new SqlConnection(@"Data Source=ASUSX512FJC\SQLSERVER;Initial Catalog=AppConnectedChurchDatabase;Integrated Security=True"))
+
+            using (SqlConnection conexao = new SqlConnection(@"Data Source=ASUSX512FJ;Initial Catalog=OrionDatabase;Integrated Security=True"))
             {
 
                 //Define o comando
@@ -469,7 +472,7 @@ namespace OrionWinForms
         {
             if (txtNome.Text == "")
             {
-                MessageBox.Show("Informe o Nome do Membro","Informação Inválida",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Informe o Nome do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNome.Focus();
                 return false;
             }
@@ -600,7 +603,7 @@ namespace OrionWinForms
                 return false;
             }
 
-            else if(txtNeighborhood.Text == "")
+            else if (txtNeighborhood.Text == "")
             {
                 MessageBox.Show("Informe o Bairro Residencial do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNeighborhood.Focus();
@@ -705,7 +708,7 @@ namespace OrionWinForms
                 return false;
             }
 
-            else if(cbxStatus.Text == "")
+            else if (cbxStatus.Text == "")
             {
                 MessageBox.Show("Informe o Status atual do Membro", "Informação Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbxStatus.Focus();
@@ -755,7 +758,7 @@ namespace OrionWinForms
                         cmdMember.Parameters.AddWithValue("@cidadeNascimento", txtCidadeNascimento.Text);
                         cmdMember.Parameters.AddWithValue("@ufNascimento", cbxUFNascimento.Text);
                         cmdMember.Parameters.AddWithValue("@nacionalidade", txtNacionalidade.Text);
-                        cmdMember.Parameters.AddWithValue("@rg", mskRG.Text.Replace(".","").Replace("-",""));
+                        cmdMember.Parameters.AddWithValue("@rg", mskRG.Text.Replace(".", "").Replace("-", ""));
                         cmdMember.Parameters.AddWithValue("@cpf", mskCPF.Text.Replace(".", "").Replace("-", ""));
                         cmdMember.Parameters.AddWithValue("@genero", cbxGenero.Text);
                         cmdMember.Parameters.AddWithValue("@status", cbxStatus.Text);
@@ -771,14 +774,14 @@ namespace OrionWinForms
                         //insert na tabela contact
                         string insertContactSQL = "INSERT INTO Contact(MembroCPF, MembroRG, CellPhone, Email)VALUES(@cpf, @rg, @cel, @mail); SELECT SCOPE_IDENTITY()";
                         SqlCommand cmdContact = new SqlCommand(insertContactSQL, connection, transaction);
-                        cmdContact.Parameters.AddWithValue("@cel", mskCellFone.Text.Replace("(","").Replace(")","").Replace("-",""));
+                        cmdContact.Parameters.AddWithValue("@cel", mskCellFone.Text.Replace("(", "").Replace(")", "").Replace("-", ""));
                         cmdContact.Parameters.AddWithValue("@mail", mskEmail.Text);
                         cmdContact.Parameters.AddWithValue("@rg", mskRG.Text.Replace(".", "").Replace("-", ""));
                         cmdContact.Parameters.AddWithValue("@cpf", mskCPF.Text.Replace(".", "").Replace("-", ""));
 
 
                         //insert na tabela address
-                        string insertAddressSQL = "INSERT INTO Address(MembroCPF, MembroRG, Address, Neighborhood, City, State, Country, Zip)"+
+                        string insertAddressSQL = "INSERT INTO Address(MembroCPF, MembroRG, Address, Neighborhood, City, State, Country, Zip)" +
                                                                "VALUES(@cpf, @rg, @address, @neighborhood, @city, @uf, @country, @cep); SELECT SCOPE_IDENTITY()";
                         SqlCommand cmdAddress = new SqlCommand(insertAddressSQL, connection, transaction);
                         var Address = txtLogradouro.Text + ", " + txtNumAddress.Text + ", " + txtComplementoAddress.Text;
@@ -786,7 +789,7 @@ namespace OrionWinForms
                         cmdAddress.Parameters.AddWithValue("@city", txtCidadeAddress.Text);
                         cmdAddress.Parameters.AddWithValue("@uf", cbxUFAddress.Text);
                         cmdAddress.Parameters.AddWithValue("@country", txtPaisaddress.Text);
-                        cmdAddress.Parameters.AddWithValue("@cep", mskCEPAddress.Text.Replace("-",""));
+                        cmdAddress.Parameters.AddWithValue("@cep", mskCEPAddress.Text.Replace("-", ""));
                         cmdAddress.Parameters.AddWithValue("@rg", mskRG.Text.Replace(".", "").Replace("-", ""));
                         cmdAddress.Parameters.AddWithValue("@cpf", mskCPF.Text.Replace(".", "").Replace("-", ""));
                         cmdAddress.Parameters.AddWithValue("@neighborhood", txtNeighborhood.Text);
@@ -877,7 +880,7 @@ namespace OrionWinForms
             cbxStatus.SelectedIndex = -1;
 
         }
-        
+
 
         private void CaptureImagem()
         {
@@ -915,7 +918,7 @@ namespace OrionWinForms
             using (PdfWriter wPdf = new PdfWriter(path, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {
                 var pdfDocument = new PdfDocument(wPdf);
-                
+
                 var document = new Document(pdfDocument, PageSize.A5.Rotate());
 
                 document.SetFontSize(8);
@@ -966,7 +969,7 @@ namespace OrionWinForms
                 var imgPCell = new Cell().Add(img);
                 imgPCell.SetBorder(Border.NO_BORDER);
                 table1.AddCell(imgPCell);
-                
+
                 //remover a borda
                 table1.SetBorder(Border.NO_BORDER);
                 document.Add(table1);
@@ -976,7 +979,7 @@ namespace OrionWinForms
 
 
                 Table table2 = new Table(new float[] { 200, 200, 200 });
-                
+
                 table2.AddCell(new Cell().Add(new Paragraph("Membro: " + txtNome.Text + " " + txtSobrenome.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
                 table2.AddCell(new Cell().Add(new Paragraph("Pai: " + txtNomePai.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
                 table2.AddCell(new Cell().Add(new Paragraph("Mãe: " + txtNomeMae.Text).SetFontSize(8).SetTextAlignment(TextAlignment.LEFT)).SetBorder(Border.NO_BORDER));
@@ -1017,7 +1020,7 @@ namespace OrionWinForms
                 document.Close();
                 pdfDocument.Close();
 
-                MessageBox.Show("Arquivo PDF gerado em "+path, "Relatório PDF.",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Arquivo PDF gerado em " + path, "Relatório PDF.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
